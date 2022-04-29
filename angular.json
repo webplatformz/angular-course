@@ -110,9 +110,21 @@
               "devServerTarget": "zuehlke-angular-course:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "zuehlke-angular-course"
+  "defaultProject": "zuehlke-angular-course",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

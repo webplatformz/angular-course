@@ -7,41 +7,35 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Hero } from './hero';
 import { MessageService } from './message.service';
 
-
 @Injectable({ providedIn: 'root' })
 export class HeroService {
-
-  private heroesUrl = 'api/heroes';  // URL to web api
+  private heroesUrl = 'api/heroes'; // URL to web api
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  constructor(
-    private http: HttpClient,
-    private messageService: MessageService) { }
+  constructor(private http: HttpClient, private messageService: MessageService) {}
 
   /** GET heroes from the server */
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl)
-      .pipe(
-        tap(_ => this.log('fetched heroes')),
-        catchError(this.handleError<Hero[]>('getHeroes', []))
-      );
+    return this.http.get<Hero[]>(this.heroesUrl).pipe(
+      tap(_ => this.log('fetched heroes')),
+      catchError(this.handleError<Hero[]>('getHeroes', []))
+    );
   }
 
   /** GET hero by id. Return `undefined` when id not found */
   getHeroNo404<Data>(id: number): Observable<Hero> {
     const url = `${this.heroesUrl}/?id=${id}`;
-    return this.http.get<Hero[]>(url)
-      .pipe(
-        map(heroes => heroes[0]), // returns a {0|1} element array
-        tap(h => {
-          const outcome = h ? 'fetched' : 'did not find';
-          this.log(`${outcome} hero id=${id}`);
-        }),
-        catchError(this.handleError<Hero>(`getHero id=${id}`))
-      );
+    return this.http.get<Hero[]>(url).pipe(
+      map(heroes => heroes[0]), // returns a {0|1} element array
+      tap(h => {
+        const outcome = h ? 'fetched' : 'did not find';
+        this.log(`${outcome} hero id=${id}`);
+      }),
+      catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
   }
 
   /** GET hero by id. Will 404 if id not found */
@@ -60,9 +54,7 @@ export class HeroService {
       return of([]);
     }
     return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
-      tap(x => x.length ?
-         this.log(`found heroes matching "${term}"`) :
-         this.log(`no heroes matching "${term}"`)),
+      tap(x => (x.length ? this.log(`found heroes matching "${term}"`) : this.log(`no heroes matching "${term}"`))),
       catchError(this.handleError<Hero[]>('searchHeroes', []))
     );
   }
@@ -104,7 +96,6 @@ export class HeroService {
    */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
 

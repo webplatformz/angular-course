@@ -14,15 +14,15 @@ describe('DashboardComponent', () => {
   let heroService;
   let getHeroesSpy: jasmine.Spy;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async () => {
     heroService = jasmine.createSpyObj('HeroService', ['getHeroes']);
     getHeroesSpy = heroService.getHeroes.and.returnValue(of(HEROES));
-    TestBed.configureTestingModule({
+    return TestBed.configureTestingModule({
       declarations: [DashboardComponent, HeroSearchComponent],
       imports: [RouterTestingModule.withRoutes([])],
       providers: [{ provide: HeroService, useValue: heroService }],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DashboardComponent);
@@ -38,11 +38,11 @@ describe('DashboardComponent', () => {
     expect(fixture.nativeElement.querySelector('h2').textContent).toEqual('Top Heroes');
   });
 
-  it('should call heroService', waitForAsync(() => {
+  it('should call heroService', () => {
     expect(getHeroesSpy.calls.any()).toBe(true);
-  }));
+  });
 
-  it('should display 4 links', waitForAsync(() => {
+  it('should display 4 links', () => {
     expect(fixture.nativeElement.querySelectorAll('a').length).toEqual(4);
-  }));
+  });
 });

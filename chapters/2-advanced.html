@@ -31,6 +31,30 @@
             <section>
                 <h2>Lifecycle & Change Detection</h2>
             </section>
+
+            <section>
+                <h2>Component Lifecycle</h2>
+                <p>Components have a lifecycle managed by Angular, which offers lifecycle hook interfaces. The most important ones are:</p>
+                <ul>
+                    <li class="fragment"><b>ngOnChanges:</b> when data-bound input properties change</li>
+                    <li class="fragment"><b>ngOnInit:</b> initialize the component</li>
+                    <li class="fragment"><b>ngOnDestroy:</b> for cleanup, called immediately before component is destroyed</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Full Lifecycle</h2>
+                <img src="../img/2-advanced_angular-lifecycle.png"/>
+            </section>
+
+            <section>
+                <h2>Constructor vs. ngOnInit</h2>
+                <ul>
+                    <li>constructor is for dependency injection</li>
+                    <li>JS handles the constructor, Angular handles ngOnInit</li>
+                    <li>input properties are only set <i>after</i> the constructor</li>
+                </ul>
+            </section>
         </section>
 
         <section>

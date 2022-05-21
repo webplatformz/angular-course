@@ -1,17 +1,30 @@
 import { TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { CanNavigateToDetailGuard } from './can-navigate-to-detail.guard';
 
 describe('CanNavigateToDetailGuard', () => {
   let guard: CanNavigateToDetailGuard;
+  let router: Router;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({ imports: [RouterTestingModule] });
+
     guard = TestBed.inject(CanNavigateToDetailGuard);
+    router = TestBed.inject(Router);
   });
 
   it('should be created', () => {
     expect(guard).toBeTruthy();
+  });
+
+  it('guard skipped if flag set', () => {
+    spyOn(router, 'getCurrentNavigation').and.returnValue({ extras: { state: { skipGuards: true } } } as any);
+
+    const result = guard.canActivate();
+
+    expect(result).toBeTrue();
   });
 
   it('navigation allowed if dialog window confirmed', () => {

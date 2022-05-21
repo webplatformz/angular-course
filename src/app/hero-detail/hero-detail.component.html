@@ -7,5 +7,5 @@
   </div>
   <button type="button" (click)="goBack()">go back</button>
   <button type="button" (click)="save()">save</button>
-  <button routerLink="/detail/{{ nextId }}" [disabled]="!nextId">to next</button>
+  <button type="button" (click)="toNext()" [disabled]="!nextId">to next</button>
 </div>

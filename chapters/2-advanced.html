@@ -34,17 +34,54 @@
 
             <section>
                 <h2>Component Lifecycle</h2>
-                <p>Components have a lifecycle managed by Angular, which offers lifecycle hook interfaces. The most important ones are:</p>
-                <ul>
-                    <li class="fragment"><b>ngOnChanges:</b> when data-bound input properties change</li>
-                    <li class="fragment"><b>ngOnInit:</b> initialize the component</li>
-                    <li class="fragment"><b>ngOnDestroy:</b> for cleanup, called immediately before component is destroyed</li>
-                </ul>
+                <p>Components have a lifecycle managed by Angular, which offers lifecycle hook interfaces.</p>
+                <p>By implementing those, we can hook into different steps of the lifecycle.</p>
             </section>
 
             <section>
                 <h2>Full Lifecycle</h2>
-                <img src="../img/2-advanced_angular-lifecycle.png"/>
+                <img src="../img/2-angular-lifecycle.svg"/>
+                <aside class="notes">
+                    <ul>
+                        <li>ngOnChanges is initially called only if there are inputs</li>
+                        <li>ngDoCheck is called on every change detection run, allowing implement a custom change detection, in cases where onChanges doesn't catch changes</li>
+                        <li>content hooks are about
+                            <i>projected content</i> (ng-content), view are about the template of the component and its children
+                        </li>
+                        <li>ngAfterView... hooks are called <i>after</i> the child component views are created</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h1>🤯</h1>
+            </section>
+
+            <section>
+                <h2>Important Hooks</h2>
+                <p>Most of these hooks are only relevant in rare edge cases. The most important ones are:</p>
+                <ul>
+                    <li class="fragment"><b>ngOnInit:</b> initialize the component</li>
+                    <li class="fragment">
+                        <b>ngOnDestroy:</b> for cleanup, called immediately before component is destroyed
+                    </li>
+                    <li class="fragment"><b>ngOnChanges:</b> when data-bound input properties change</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>ngOnInit</h2>
+                <pre><code class="hljs ts" contenteditable data-trim>
+                   @Component({selector: 'my-cmp', template: `...`})
+                    class MyComponent implements OnInit {
+                      public data$: Observable&lt;Data&gt;;
+
+                      ngOnInit() {
+                        this.data$ = this.http.get('/api');
+                        // ...
+                      }
+                    }
+                </code></pre>
             </section>
 
             <section>
@@ -52,9 +89,94 @@
                 <ul>
                     <li>constructor is for dependency injection</li>
                     <li>JS handles the constructor, Angular handles ngOnInit</li>
-                    <li>input properties are only set <i>after</i> the constructor</li>
+                    <li>input properties are only set <u>after</u> the constructor</li>
+                </ul>
+                <div class="tip fragment">an empty constructor is a good constructor</div>
+            </section>
+
+            <section>
+                <h2>ngOnDestroy</h2>
+                <pre><code class="hljs ts" contenteditable data-trim>
+                    @Component({selector: 'my-cmp', template: `...`})
+                    class MyComponent implements OnDestroy {
+                      private subscription: Subscription;
+
+                      ngOnDestroy() {
+                        this.subscription.unsubscribe();
+                        // ...
+                      }
+                    }
+                </code></pre>
+                <div class="tip fragment">clean up your subscriptions!</div>
+            </section>
+
+            <section>
+                <h2>ngOnChanges</h2>
+                <pre><code class="hljs ts" contenteditable data-trim>
+                    @Component({selector: 'my-cmp', template: `...`})
+                    class MyComponent implements OnChanges {
+                      @Input() prop: number = 0;
+
+                      ngOnChanges({prop}: SimpleChanges) {
+                        if (prop.previousValue !== prop.currentValue) {
+                          // ...
+                        }
+                      }
+                    }
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Change Detection</h2>
+                <p>Angular detects when component data changes and automatically calls <span class="code">ngOnChanges</span> and re-renders the view.</p>
+                <p>It does that by overriding several browser APIs such as <span class="code">addEventListener</span> to trigger the the change detection.</p>
+                <p>This logic is handled by the Zone.js library.</p>
+            </section>
+
+            <section>
+                <h2>Default behavior</h2>
+                <p>Each component has an associated change detector, which is created at app startup time.</p>
+                <p>By default each template expression is checked, whether the current values in it differ from the previous ones.</p>
+            </section>
+
+            <section>
+                <h2>Alternative change detection strategy</h2>
+                <p>We can set a different strategy on component-level called <span class="code">OnPush</span>, which will check in these cases:</p>
+                <ul>
+                    <li class="fragment">when any of the component's input properties change (i.e. their references)</li>
+                    <li class="fragment">when the component fires an event</li>
+                    <li class="fragment">when an Observable fires an event</li>
                 </ul>
             </section>
+
+            <section>
+                <h2>Use OnPush</h2>
+                <pre><code class="hljs ts" contenteditable data-trim data-noescape>
+                    @Component({
+                        selector: 'todo-list',
+                        template: '...',
+                        <b>changeDetection: ChangeDetectionStrategy.OnPush</b>,
+                    })
+                    export class TodoList {
+                        //...
+                        toggleFirst() { // doesn't trigger a re-render!
+                            this.todos[0].done = !this.todos[0].done;
+                        }
+
+                        addTodo() { // works, as we assign a new object
+                            let newTodos = this.todos.slice(0);
+                            newTodos.push(new Todo("TODO 4", false, "John"));
+                            this.todos = newTodos;
+                        }
+                    }
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>OnPush vs. Default</h2>
+                <p><span class="code">OnPush</span> works well in combination with strict immutability.</p>
+            </section>
+
         </section>
 
         <section>

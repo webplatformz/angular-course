@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { InMemoryHeroService } from './in-memory-hero.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -25,7 +25,7 @@ import { MessagesComponent } from './messages/messages.component';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryHeroService, { dataEncapsulation: false }),
   ],
   declarations: [
     AppComponent,

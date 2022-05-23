@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 
@@ -20,7 +21,15 @@ describe('DashboardComponent', () => {
     return TestBed.configureTestingModule({
       declarations: [DashboardComponent, HeroSearchComponent],
       imports: [RouterTestingModule.withRoutes([])],
-      providers: [{ provide: HeroService, useValue: heroService }],
+      providers: [
+        { provide: HeroService, useValue: heroService },
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: { data: { config: { value: 5 } } },
+          },
+        },
+      ],
     }).compileComponents();
   });
 

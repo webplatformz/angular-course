@@ -11,6 +11,7 @@ import { MessageService } from '../message.service';
 // TODO: Could be splitted to ConfigResolverService and ConfigService in refactoring
 export class ConfigResolverService implements Resolve<Config> {
   private configUrl = 'api/config';
+  private config$!: Observable<Config>;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -20,9 +21,13 @@ export class ConfigResolverService implements Resolve<Config> {
 
   /** GET config from the server */
   resolve(): Observable<Config> {
-    return this.http.get<Config>(this.configUrl).pipe(
-      tap(_ => this.log('fetched config')),
-    );
+    if (!this.config$) {
+      this.config$ = this.http.get<Config>(this.configUrl).pipe(
+        tap(_ => this.log('fetched config from server')),
+        shareReplay()
+      );
+    }
+    return this.config$;
   }
 
   /** Log a HeroService message with the MessageService */

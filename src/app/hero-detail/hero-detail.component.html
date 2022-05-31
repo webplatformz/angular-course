@@ -1,10 +1,19 @@
 <div *ngIf="hero">
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
-  </div>
-  <button type="button" (click)="goBack()">go back</button>
-  <button type="button" (click)="save()">save</button>
+  <h2>{{ hero.name | uppercase }} Details</h2>
+
+  <form (ngSubmit)="save()" #heroForm="ngForm">
+    <div><span>id: </span>{{ hero.id }}</div>
+    <div class="form-group">
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="hero.name" required placeholder="Hero name" name="name" />
+    </div>
+
+    <div class="form-group">
+      <label for="hero-nickname">a.k.a: </label>
+      <input id="hero-nickname" [(ngModel)]="hero.nickname" required placeholder="Hero nickname" name="nickname" />
+    </div>
+
+    <button type="button" (click)="goBack()">go back</button>
+    <button type="submit" [disabled]="!heroForm.form.valid">save</button>
+  </form>
 </div>

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-hero-detail',
@@ -12,6 +13,9 @@ import { HeroService } from '../hero.service';
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;
+
+  @ViewChild('heroForm')
+  heroForm: NgForm | undefined;
 
   constructor(private route: ActivatedRoute, private heroService: HeroService, private location: Location) {}
 
@@ -26,6 +30,7 @@ export class HeroDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+    this.heroForm?.reset();
   }
 
   save(): void {

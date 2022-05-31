@@ -107,7 +107,7 @@
                       }
                     }
                 </code></pre>
-                <div class="tip fragment">clean up your subscriptions!</div>
+                <div class="tip fragment">clean up after yourself!</div>
             </section>
 
             <section>
@@ -128,20 +128,25 @@
 
             <section>
                 <h2>Change Detection</h2>
-                <p>Angular detects when component data changes and automatically calls <span class="code">ngOnChanges</span> and re-renders the view.</p>
-                <p>It does that by overriding several browser APIs such as <span class="code">addEventListener</span> to trigger the the change detection.</p>
+                <p>Angular detects when component data changes and automatically calls <span
+                        class="code">ngOnChanges</span> and re-renders the view.</p>
+                <p>It does that by overriding several browser APIs such as <span
+                        class="code">addEventListener</span> to trigger the the change detection.</p>
                 <p>This logic is handled by the Zone.js library.</p>
             </section>
 
             <section>
                 <h2>Default behavior</h2>
                 <p>Each component has an associated change detector, which is created at app startup time.</p>
-                <p>By default each template expression is checked, whether the current values in it differ from the previous ones.</p>
+                <p>By default each
+                    <u>template expression</u> is checked, whether the current values in it differ from the previous ones.
+                </p>
             </section>
 
             <section>
-                <h2>Alternative change detection strategy</h2>
-                <p>We can set a different strategy on component-level called <span class="code">OnPush</span>, which will check in these cases:</p>
+                <h2>Alternative CD Strategy</h2>
+                <p>We can set a different strategy on component-level called <span
+                        class="code">OnPush</span>, which will check in these cases:</p>
                 <ul>
                     <li class="fragment">when any of the component's input properties change (i.e. their references)</li>
                     <li class="fragment">when the component fires an event</li>
@@ -153,8 +158,7 @@
                 <h2>Use OnPush</h2>
                 <pre><code class="hljs ts" contenteditable data-trim data-noescape>
                     @Component({
-                        selector: 'todo-list',
-                        template: '...',
+                        selector: 'todo-list', template: '...',
                         <b>changeDetection: ChangeDetectionStrategy.OnPush</b>,
                     })
                     export class TodoList {
@@ -173,10 +177,47 @@
             </section>
 
             <section>
-                <h2>OnPush vs. Default</h2>
+                <h2>OnPush</h2>
                 <p><span class="code">OnPush</span> works well in combination with strict immutability.</p>
+                <p>If you build your application using immutable objects only, you can use <span
+                        class="code">OnPush</span> everywhere.</p>
+                <p>Otherwise it's easy to create change detection bugs with <span class="code">OnPush</span>.</p>
+                <div class="fragment tip">Use a library like Immutable.js or Immer to ensure immutability!</div>
             </section>
 
+            <section>
+                <h2>Default vs. OnPush</h2>
+                <div class="comparison">
+                    <div>
+                        <img src="../img/2-cd-cycle.gif" alt="Default Change Detection Cycle">
+                    </div>
+                    <div>
+                        <img src="../img/2-cd-on-push-cycle.gif" alt="OnPush Change Detection Cycle">
+                    </div>
+                </div>
+                <small>Source: <a href="https://mokkapps.de/blog/the-last-guide-for-angular-change-detection-you-will-ever-need/">Mokkapps</a></small>
+            </section>
+
+            <section>
+                <h2>Change Detection Loops</h2>
+                <p>Angular enforces a <u>uni-direction data flow</u>.</p>
+                <p>Updating the view doesn't trigger further changes that trigger further updates to the view.</p>
+                <p>Angular shows an error in the console in development, if you create such a scenario.</p>
+            </section>
+
+            <section>
+                <h2>Manual Change Detection</h2>
+                <p>In very rare cases, where you want to disable the automatic change detection, you can inject the
+                    <span class="code">ChangeDetectorRef</span>:</p>
+                <pre><code class="hljs ts" contenteditable data-trim>
+                    constructor(private ref: ChangeDetectorRef) {
+                        ref.detach();       // disable automatic CD
+                        setInterval(() => { // run CD every 5 sec
+                          this.ref.detectChanges();
+                        }, 5000);
+                    }
+                </code></pre>
+            </section>
         </section>
 
         <section>

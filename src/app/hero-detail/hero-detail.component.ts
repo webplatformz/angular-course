@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-hero-detail',
@@ -15,7 +15,12 @@ export class HeroDetailComponent implements OnInit {
   hero!: Hero;
   heroForm!: FormGroup;
 
-  constructor(private route: ActivatedRoute, private heroService: HeroService, private location: Location) {}
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private location: Location,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.getHero();
@@ -30,10 +35,18 @@ export class HeroDetailComponent implements OnInit {
   }
 
   private createForm(hero: Hero) {
-    this.heroForm = new FormGroup({
-      name: new FormControl(hero.name, Validators.required),
-      nickname: new FormControl(hero.nickname),
+    this.heroForm = this.fb.group({
+      name: this.fb.control(hero.name, Validators.required),
+      nicknames: this.buildNicknamesArray(hero.nicknames),
     });
+  }
+
+  private buildNicknamesArray(values: string[] | undefined): FormArray {
+    return values ? this.fb.array(values) : this.fb.array([]);
+  }
+
+  get nicknames(): FormArray {
+    return this.heroForm.get('nicknames') as FormArray;
   }
 
   isValid(): boolean {
@@ -45,10 +58,15 @@ export class HeroDetailComponent implements OnInit {
     this.heroForm.reset();
   }
 
+  addNicknameControl() {
+    this.nicknames.push(this.fb.control(''));
+  }
+
   save(): void {
     if (this.hero) {
-      this.hero.name = this.heroForm.controls['name'].value;
-      this.hero.nickname = this.heroForm.controls['nickname'].value;
+      const formValue = this.heroForm.value;
+      this.hero.name = formValue.name;
+      this.hero.nicknames = formValue.nicknames.filter((nickname: string) => nickname);
 
       this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
     }

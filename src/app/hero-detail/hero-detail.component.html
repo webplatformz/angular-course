@@ -8,12 +8,15 @@
       <input id="hero-name" formControlName="name" placeholder="Hero name" name="name" />
     </div>
 
-    <div class="form-group">
+    <div class="form-group" formArrayName="nicknames">
       <label for="hero-nickname">a.k.a: </label>
-      <input id="hero-nickname" formControlName="nickname" placeholder="Hero nickname" name="nickname" />
+      <div *ngFor="let c of nicknames.controls; index as i">
+        <input id="hero-nickname" [formControlName]="i" placeholder="Hero nickname" name="nickname" />
+      </div>
     </div>
 
     <button type="button" (click)="goBack()">go back</button>
     <button type="submit" [disabled]="!isValid()">save</button>
+    <button type="button" (click)="addNicknameControl()">add nickname</button>
   </form>
 </div>

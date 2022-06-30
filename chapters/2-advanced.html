@@ -128,12 +128,10 @@
 
             <section>
                 <h2>Change Detection</h2>
-                <p>Angular detects when component data changes and automatically calls <span
-                        class="code">ngOnChanges</span> and re-renders the view.</p>
-                <p>It does that by overriding several browser APIs such as <span
-                        class="code">addEventListener</span> to trigger the the change detection.</p>
-                <p>This logic is handled by the Zone.js library.</p>
-                <!-- TODO: one sentence explanatation to Zone.js?, example of error? -->
+                <p>Angular detects when component data changes, calls <span class="code">ngOnChanges</span> and re-renders the view.</p>
+                <p>It does that by overriding/patching most browser APIs such as <span class="code">addEventListener</span> to trigger the the change detection.</p>
+                <p>This patching is handled by the <strong>Zone.js</strong> library, which provides a persistent zone across async tasks and events.</p>
+                <aside class="notes">This is why "Zone.js" appears in error stacktraces. It's the bridge between Angular and the browser API.</aside>
             </section>
 
             <section>
@@ -163,26 +161,22 @@
                         <b>changeDetection: ChangeDetectionStrategy.OnPush</b>,
                     })
                     export class TodoList {
-                        //...
-                        toggleFirst() { // doesn't trigger a re-render!
-                            this.todos[0].done = !this.todos[0].done;
+                        addTodoMutating() { // doesn't trigger a re-render!
+                            this.todos.push(new Todo("TODO 4", false, "John"));
                         }
-                        // TODO: implement toggle twice
 
-                        addTodo() { // works, as we assign a new object
-                            let newTodos = this.todos.slice(0);
-                            newTodos.push(new Todo("TODO 4", false, "John"));
-                            this.todos = newTodos; // destr
+                        addTodoImmutable() { // works, assigns a new object
+                            const newTodo = new Todo("TODO 4", false, "John");
+                            this.todos = [...this.todos, newTodo];
                         }
                     }
                 </code></pre>
             </section>
 
             <section>
-                <h2>OnPush</h2>
+                <h2>OnPush & Immutability</h2>
                 <p><span class="code">OnPush</span> works well in combination with strict immutability.</p>
-                <p>If you build your application using immutable objects only, you can use <span
-                        class="code">OnPush</span> everywhere.</p>
+                <p>If you build your application using immutable objects only, you can use <span class="code">OnPush</span> everywhere.</p>
                 <p>Otherwise it's easy to create change detection bugs with <span class="code">OnPush</span>.</p>
                 <div class="fragment tip">Use a library like Immutable.js or Immer to ensure immutability!</div>
             </section>
@@ -198,31 +192,37 @@
                     </div>
                 </div>
                 <small>Source: <a href="https://mokkapps.de/blog/the-last-guide-for-angular-change-detection-you-will-ever-need/">Mokkapps</a></small>
-                <!-- TODO: mention performance, but careful -->
+            </section>
+
+            <section>
+                <h2>Performance</h2>
+                <p>Using <span class="code">OnPush</span> <em>can</em> improve the runtime performance.</p>
+                <p>But be aware of its implications.</p>
             </section>
 
             <section>
                 <h2>Change Detection Loops</h2>
-                <!-- TODO: insert screenshot of "expression changed" error first -->
-                <!-- change of value in ngOnChange, child changed parent object e.g. -->
-                <p>Angular enforces a <u>uni-direction data flow</u>.</p>
-                <p>Updating the view doesn't trigger further changes that trigger further updates to the view.</p>
-                <p>Angular shows an error in the console in development, if you create such a scenario.</p>
+                <img src="../img/2-cd-expression-changed-error.png"
+                     alt="Screenshot of browser console containing an error 'Expression changed after it has been checked'">
+                <div class="fragment">
+                    <p>Angular enforces a <u>uni-direction data flow</u>. Child components are not allowed to change data in the parent (use events).</p>
+                    <p>Updating the view doesn't trigger further changes that trigger further updates to the view: no loops.</p>
+                </div>
             </section>
 
             <section>
                 <h2>Manual Change Detection</h2>
-                <p>In very rare cases, where you want to disable the automatic change detection, you can inject the
-                    <span class="code">ChangeDetectorRef</span>:</p>
+                <p>It's possible to disable the automatic CD with the <span class="code">ChangeDetectorRef</span>:</p>
                 <pre><code class="hljs ts" contenteditable data-trim>
                     constructor(private ref: ChangeDetectorRef) {
-                        ref.detach();       // disable automatic CD
+                        ref.detach(); // disable automatic CD for subtree
                         setInterval(() => { // run CD every 5 sec
                           this.ref.detectChanges();
                         }, 5000);
                     }
                 </code></pre>
-                <!-- TODO: fighting symptoms instead of source, possible smell -->
+                <p class="fragment">This is likely just a way to treat the symptoms rather than fix the problem underneath.</p>
+                <div class="fragment tip">Use with care, know what you're doing!</div>
             </section>
         </section>
 
@@ -294,8 +294,27 @@
             <section>
                 <h2>Interceptor Order</h2>
                 <p>The order in which interceptors are provided is relevant. They're getting applied «from the outside in»:</p>
-                <img src="../img/2-interceptor-order.svg" alt="Order of Interceptors from the HttpClient to AuthInterceptor to LoggingInterceptor to HttpBackend and then the server. The response goes the other way back.">
-                <!-- TODO: add code for this -->
+                <div class="comparison">
+                    <div>
+                        <pre style="margin: 0;"><code class="hljs ts" contenteditable data-trim data-noescape>
+                            providers: [
+                              {
+                                provide: HTTP_INTERCEPTORS,
+                                useClass: <b>AuthInterceptor</b>,
+                                multi: true
+                              },
+                              {
+                                provide: HTTP_INTERCEPTORS,
+                                useClass: <b>LoggingInterceptor</b>,
+                                multi: true
+                              },
+                            ]
+                        </code></pre>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="../img/2-interceptor-order.svg" alt="Order of Interceptors from the HttpClient to AuthInterceptor to LoggingInterceptor to HttpBackend and then the server. The response goes the other way back.">
+                    </div>
+                </div>
             </section>
 
             <section>

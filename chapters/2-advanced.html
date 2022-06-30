@@ -133,6 +133,7 @@
                 <p>It does that by overriding several browser APIs such as <span
                         class="code">addEventListener</span> to trigger the the change detection.</p>
                 <p>This logic is handled by the Zone.js library.</p>
+                <!-- TODO: one sentence explanatation to Zone.js?, example of error? -->
             </section>
 
             <section>
@@ -166,11 +167,12 @@
                         toggleFirst() { // doesn't trigger a re-render!
                             this.todos[0].done = !this.todos[0].done;
                         }
+                        // TODO: implement toggle twice
 
                         addTodo() { // works, as we assign a new object
                             let newTodos = this.todos.slice(0);
                             newTodos.push(new Todo("TODO 4", false, "John"));
-                            this.todos = newTodos;
+                            this.todos = newTodos; // destr
                         }
                     }
                 </code></pre>
@@ -196,10 +198,13 @@
                     </div>
                 </div>
                 <small>Source: <a href="https://mokkapps.de/blog/the-last-guide-for-angular-change-detection-you-will-ever-need/">Mokkapps</a></small>
+                <!-- TODO: mention performance, but careful -->
             </section>
 
             <section>
                 <h2>Change Detection Loops</h2>
+                <!-- TODO: insert screenshot of "expression changed" error first -->
+                <!-- change of value in ngOnChange, child changed parent object e.g. -->
                 <p>Angular enforces a <u>uni-direction data flow</u>.</p>
                 <p>Updating the view doesn't trigger further changes that trigger further updates to the view.</p>
                 <p>Angular shows an error in the console in development, if you create such a scenario.</p>
@@ -217,6 +222,7 @@
                         }, 5000);
                     }
                 </code></pre>
+                <!-- TODO: fighting symptoms instead of source, possible smell -->
             </section>
         </section>
 
@@ -229,6 +235,79 @@
         <section>
             <section>
                 <h2>Interceptors</h2>
+            </section>
+
+            <section>
+                <h2>HTTP Communication</h2>
+                <p>Angular provides a client HTTP API with the <span class="code">HttpClient</span> service.</p>
+                <p>Making HTTP requests through that offers multiple helpful features, among them: <strong>interception</strong>.</p>
+            </section>
+
+            <section>
+                <h2>Interception</h2>
+                <p>Interception allows you to <u>inspect and transform</u> HTTP requests and responses.</p>
+                <img src="../img/2-interceptor-overview.png" alt="Diagram showing Interceptor between Angular Application and Sever, having HTTP requests and responses going through it">
+                <p>Multiple interceptors can form a chain of request/response handlers, that are applied to all HTTP communication.</p>
+            </section>
+
+            <section>
+                <h2>Write an Interceptor</h2>
+                <pre><code class="hljs ts" contenteditable data-trim>
+                    import { Injectable } from '@angular/core';
+                    import {
+                        HttpEvent, HttpInterceptor, HttpHandler, HttpRequest
+                    } from '@angular/common/http';
+                    import { Observable } from 'rxjs';
+
+                    @Injectable()
+                    export class NoopInterceptor implements HttpInterceptor {
+                        intercept(req: HttpRequest&lt;any&gt;, next: HttpHandler):
+                            Observable&lt;HttpEvent&lt;any&gt;&gt; {
+                            // pass untouched request to next handler
+                            return next.handle(req);
+                        }
+                    }
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Request / Response</h2>
+                <p>The <span class="code">req</span> parameter is the HTTP request.</p>
+                <p>The <span class="code">next</span> object represents the next interceptor in the chain, or the HttpBackend handler at the end of the chain.</p>
+                <p>The return value of the <span class="code">handle</span> method is the HTTP response.</p>
+                <p>This way we can handle both directions inside an interceptor.</p>
+            </section>
+
+            <section>
+                <h2>Provide Interceptors</h2>
+                <p>Interceptors are handled by Angular's dependency injection system.</p>
+                <p>Add them to the providers in your <span class="code">app.module.ts</span>:</p>
+                <pre><code class="hljs ts" contenteditable data-trim>
+                    {
+                        provide: HTTP_INTERCEPTORS, // DI token
+                        useClass: NoopInterceptor,  // our interceptor
+                        multi: true      // allow multiple interceptors
+                    }
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Interceptor Order</h2>
+                <p>The order in which interceptors are provided is relevant. They're getting applied «from the outside in»:</p>
+                <img src="../img/2-interceptor-order.svg" alt="Order of Interceptors from the HttpClient to AuthInterceptor to LoggingInterceptor to HttpBackend and then the server. The response goes the other way back.">
+                <!-- TODO: add code for this -->
+            </section>
+
+            <section>
+                <h2>Use of Interceptors</h2>
+                <ul>
+                    <li>Logging</li>
+                    <li>Setting headers for: authentication, XSRF …</li>
+                    <li>Custom JSON parsing</li>
+                    <li>Caching</li>
+                    <li>Track Request Progress / Loading State</li>
+                    <li>Global Error Handling</li>
+                </ul>
             </section>
         </section>
 

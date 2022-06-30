@@ -5,3 +5,6 @@
 - Change Detection Guide: https://mokkapps.de/blog/the-last-guide-for-angular-change-detection-you-will-ever-need/
 - Change Detection: https://blog.angular-university.io/how-does-angular-2-change-detection-really-work/
 - Setting up ESLint and Prettier: https://javascript.plainenglish.io/how-to-configure-eslint-and-prettier-on-angular-application-87dbd767369c
+
+- Interceptors: https://angular.io/guide/http#intercepting-requests-and-responses
+- Interceptors: https://medium.com/codex/multiple-interceptors-in-angular-e0880b2f7d91

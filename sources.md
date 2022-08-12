@@ -8,3 +8,7 @@
 
 - Interceptors: https://angular.io/guide/http#intercepting-requests-and-responses
 - Interceptors: https://medium.com/codex/multiple-interceptors-in-angular-e0880b2f7d91
+
+- Component Refactoring: https://atomicdesign.bradfrost.com/table-of-contents/
+- Component Refactoring: https://medium.com/weekly-webtips/angular-clean-arquitecture-d40e9c50f51
+- Component Refactoring: https://blog.angular-university.io/angular-2-smart-components-vs-presentation-components-whats-the-difference-when-to-use-each-and-why/

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Intro</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/webplatformz/zuehlke-reveal-package@de8372e841e7cdcaaff4cce9b47cb4dc517a7e41/release/index.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section class="deck-slide">
+            <h1>Advanced Angular<br/>Refactoring I: Components</h1>
+        </section>
+
+        <section>
+            <section>
+                <h2>Types of Components</h2>
+            </section>
+
+            <section>
+                <p>The larger a project the more components we build. Taking it component-by-component turns the application into a <u>unmanageable sea of components</u>.</p>
+            </section>
+
+            <section>
+                <h2>Problems</h2>
+                <p>Why is it a problem, if all components «look the same»?</p>
+                <ul>
+                    <li>mental model is overwhelming: keeping track of data flow and dependencies gets increasingly more difficult</li>
+                    <li>changes are riskier and new features take longer due to unexpected side effects</li>
+                    <li>debugging is harder: more places where responsible code could be located</li>
+                    <li>more effort for testing as every component contains logic and dependencies</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Solutions</h2>
+                <p>Limit the area of effect of components by separation of concerns. Keep components small and make conscious decisions about the responsibilities of a component.</p>
+            </section>
+
+            <section>
+                <h2>Not all components are created equal</h2>
+                <p>There are many ways to categorise components, a common one is:</p>
+                <ul>
+                    <li>dumb components: simple, presentational (styling), display data, little to no TS code, no services, use input/output</li>
+                    <li>smart components: contain (business) logic, use services, connect other components</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Atomic Design</h2>
+                <p>Another way to think about types of components:</p>
+                <ul>
+                    <li>Atoms: basic building blocks, no business logic, no dependencies, normally only an HTML element with styling</li>
+                    <li>Molecules: collection of atoms, simple UI components</li>
+                    <li>Organisms: complex components, discrete sections of an interface, consist of molecules and atoms, contain logic</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Separation of Concern</h2>
+                <p>However you want to structure your components, the goal should always be to <u>keep as many components as simple as possible</u>.</p>
+                <p>Components should be primarily about the user interface. Make use of services for complex logic and shared state.</p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Data Flow</h2>
+                <p>One of the core principles of Angular is the unidirectional data flow: <u>data down, action up</u>.
+                </p>
+                <p>This means child components cannot change parent state. Parent components can listen on events/actions of child elements and react on those.</p>
+            </section>
+        </section>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/gh/webplatformz/zuehlke-reveal-package@de8372e841e7cdcaaff4cce9b47cb4dc517a7e41/release/index.js"></script>
+<script>
+	setupZuehlkeRevealPresentation();
+</script>
+</body>
+</html>

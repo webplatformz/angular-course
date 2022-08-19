@@ -74,9 +74,27 @@
         <section>
             <section>
                 <h2>Data Flow</h2>
-                <p>One of the core principles of Angular is the unidirectional data flow: <u>data down, action up</u>.
-                </p>
+            </section>
+            <section>
+                <h2>Data ⬇️, Action ⬆️</h2>
+                <p>One of the core principles of Angular is the unidirectional data flow: <u>data down, action up</u>.</p>
                 <p>This means child components cannot change parent state. Parent components can listen on events/actions of child elements and react on those.</p>
+            </section>
+            <section>
+                <p>But wait!</p>
+                <p class="fragment">Angular has two-way data binding. Isn't that a contradiction?</p>
+            </section>
+            <section>
+                <h2>Two-way binding</h2>
+                <pre><code class="hljs html" contenteditable data-trim data-noescape>
+                    &lt;app-toggle [(active)]="toggleActive">&lt;/app-toggle&gt;
+                    &lt;!-- is just syntactic sugar for: --&gt;
+                    &lt;app-toggle [active]="toggleActive"
+                                (activeChange)="toggleActive = $event"&gt;
+                    &lt;/app-toggle&gt;
+                </code></pre>
+                <p>The parent element is still in control!</p>
+                <p><span class="code">toggleActive</span> is only updated on event and not during the change detection cycle which is still unidirectional.</p>
             </section>
         </section>
     </div>

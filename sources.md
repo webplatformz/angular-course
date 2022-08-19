@@ -12,3 +12,4 @@
 - Component Refactoring: https://atomicdesign.bradfrost.com/table-of-contents/
 - Component Refactoring: https://medium.com/weekly-webtips/angular-clean-arquitecture-d40e9c50f51
 - Component Refactoring: https://blog.angular-university.io/angular-2-smart-components-vs-presentation-components-whats-the-difference-when-to-use-each-and-why/
+- Component Refactoring: https://indepth.dev/posts/1065/do-you-really-know-what-unidirectional-data-flow-means-in-angular

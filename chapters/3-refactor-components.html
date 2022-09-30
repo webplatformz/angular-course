@@ -24,7 +24,7 @@
             </section>
 
             <section>
-                <p>The larger a project the more components we build. Taking it component-by-component turns the application into a <u>unmanageable sea of components</u>.</p>
+                <p>The larger a project the more components we build. Taking it component-by-component turns the application into a <strong class="hl">unmanageable sea of components</strong>.</p>
             </section>
 
             <section>
@@ -39,15 +39,15 @@
 
             <section>
                 <h2>Solutions</h2>
-                <p>Limit the area of effect of components by separation of concerns. Keep components small and <u>make conscious decisions</u> about the responsibilities of a component.</p>
+                <p>Limit the area of effect of components by separation of concerns. Keep components small and <strong class="hl">make conscious decisions</strong> about the responsibilities of a component.</p>
             </section>
 
             <section>
                 <h2>Not all components are created equal</h2>
                 <p>There are many ways to categorise components, a common one is:</p>
                 <ul>
-                    <li>dumb components: simple, presentational (styling), display data, encapsulated, no dependencies, use input/output</li>
-                    <li>smart components: contain (business) logic, use services / have dependencies, connect other components</li>
+                    <li><b>dumb components</b>: simple, presentational (styling), display data, encapsulated, no dependencies, use input/output</li>
+                    <li><b>smart components</b>: contain (business) logic, use services / have dependencies, connect other components</li>
                 </ul>
             </section>
 
@@ -55,21 +55,21 @@
                 <h2>Atomic Design</h2>
                 <p>Another way to think about types of components:</p>
                 <ul>
-                    <li>Atoms: basic building blocks, no business logic, no dependencies, normally only an HTML element with styling</li>
-                    <li>Molecules: collection of atoms, simple UI components</li>
-                    <li>Organisms: complex components, discrete sections of an interface, consist of molecules and atoms, contain logic</li>
+                    <li><b>Atoms</b>: basic building blocks, no business logic, no dependencies, normally only an HTML element with styling</li>
+                    <li><b>Molecules</b>: collection of atoms, simple UI components</li>
+                    <li><b>Organisms</b>: complex components, discrete sections of an interface, consist of molecules and atoms, contain logic</li>
                 </ul>
             </section>
 
             <section>
                 <h2>Separation of Concern</h2>
                 <p>It doesn't matter what patterns you apply. Important is a common language and understanding in the team.</p>
-                <p>There's always trade-offs, but the goal should always be to <u>keep as many components as simple as possible</u>.</p>
+                <p>There's always trade-offs, but the goal should always be to <strong class="hl">keep as many components as simple as possible</strong>.</p>
                 <p>Components should primarily care about the user interface. Make use of services for complex logic and shared state.</p>
             </section>
 
-            <section>
-                <p>Most importantly:</p>
+            <section class="statement-slide">
+                <h1>Most importantly:</h1>
                 <h2>make conscious decisions</h2>
             </section>
         </section>
@@ -80,7 +80,7 @@
             </section>
             <section>
                 <h2>Data ⬇️, Action ⬆️</h2>
-                <p>One of the core principles of Angular is the unidirectional data flow: <u>data down, action up</u>.</p>
+                <p>One of the core principles of Angular is the unidirectional data flow: <strong class="hl">data down, action up</strong>.</p>
                 <p>This means child components cannot change parent state. Parent components can listen on events/actions of child elements and react on those.</p>
             </section>
             <section>

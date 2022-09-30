@@ -133,16 +133,14 @@
                 <h2>Change Detection</h2>
                 <p>Angular detects when component data changes, calls <span class="code">ngOnChanges</span> and re-renders the view.</p>
                 <p>It does that by overriding/patching most browser APIs such as <span class="code">addEventListener</span> to trigger the the change detection.</p>
-                <p>This patching is handled by the <strong>Zone.js</strong> library, which provides a persistent zone across async tasks and events.</p>
+                <p>This patching is handled by the <strong class="hl">Zone.js</strong> library, which provides a persistent zone across async tasks and events.</p>
                 <aside class="notes">This is why "Zone.js" appears in error stacktraces. It's the bridge between Angular and the browser API.</aside>
             </section>
 
             <section>
                 <h2>Default behavior</h2>
                 <p>Each component has an associated change detector, which is created at app startup time.</p>
-                <p>By default each
-                    <u>template expression</u> is checked, whether the current values in it differ from the previous ones.
-                </p>
+                <p>By default each <strong class="hl">template expression</strong> is checked, whether the current values in it differ from the previous ones.</p>
             </section>
 
             <section>
@@ -208,7 +206,7 @@
                 <img src="../img/2-cd-expression-changed-error.png"
                      alt="Screenshot of browser console containing an error 'Expression changed after it has been checked'">
                 <div class="fragment">
-                    <p>Angular enforces a <u>uni-direction data flow</u>. Child components are not allowed to change data in the parent (use events).</p>
+                    <p>Angular enforces a <strong class="hl">uni-direction data flow</strong>. Child components are not allowed to change data in the parent (use events).</p>
                     <p>Updating the view doesn't trigger further changes that trigger further updates to the view: no loops.</p>
                 </div>
             </section>
@@ -243,12 +241,12 @@
             <section>
                 <h2>HTTP Communication</h2>
                 <p>Angular provides a client HTTP API with the <span class="code">HttpClient</span> service.</p>
-                <p>Making HTTP requests through that offers multiple helpful features, among them: <strong>interception</strong>.</p>
+                <p>Making HTTP requests through that offers multiple helpful features, among them: <strong class="hl">interception</strong>.</p>
             </section>
 
             <section>
                 <h2>Interception</h2>
-                <p>Interception allows you to <u>inspect and transform</u> HTTP requests and responses.</p>
+                <p>Interception allows you to <strong class="hl">inspect and transform</strong> HTTP requests and responses.</p>
                 <img src="../img/2-interceptor-overview.png" alt="Diagram showing Interceptor between Angular Application and Sever, having HTTP requests and responses going through it">
                 <p>Multiple interceptors can form a chain of request/response handlers, that are applied to all HTTP communication.</p>
             </section>
@@ -330,6 +328,13 @@
                     <li>Track Request Progress / Loading State</li>
                     <li>Global Error Handling</li>
                 </ul>
+            </section>
+
+            <section class="exercise">
+                <div>
+                    <span class="title">Exercise</span>
+                    <span class="description">Add a logging interceptor</span>
+                </div>
             </section>
 
             <section>

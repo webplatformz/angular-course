@@ -20,6 +20,7 @@ assignees: ""
 - [ ] Teams call/invite with course participants has been sent out
   - incl. setup instructions/prerequesites
 - [ ] Miro board has been prepared
+- [ ] Introduction form is setup and QR code in slides updated
 - [ ] order an online feedback form from the [Academy](mailto:academy@zuehlke.com), specify:
   - online or onsite course
   - internal or external participants

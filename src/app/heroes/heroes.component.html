@@ -13,7 +13,7 @@
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
+      <span class="badge">{{hero.id}}</span> {{hero.name}} {{hero.classification === CLASSIFIED ? '**classified**' : ''}}
     </a>
     <button type="button" class="delete" title="delete hero"
       (click)="delete(hero)">x</button>

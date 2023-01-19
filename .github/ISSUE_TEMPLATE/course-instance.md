@@ -19,6 +19,8 @@ assignees: ""
 
 - [ ] Teams call/invite with course participants has been sent out
   - incl. setup instructions/prerequesites
+  - link to "Tour of Heroes" to go through it, if they haven't yet
+  - link to Repo and instructions to check it out and run it
 - [ ] Miro board has been prepared
 - [ ] Introduction form is setup and QR code in slides updated
 - [ ] order an online feedback form from the [Academy](mailto:academy@zuehlke.com), specify:

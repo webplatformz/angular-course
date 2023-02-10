@@ -12,8 +12,9 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { HeroSearchComponent } from './search/feature/hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
+import { SearchBarComponent } from './search/ui/search-bar/search-bar.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { MessagesComponent } from './messages/messages.component';
     HeroDetailComponent,
     MessagesComponent,
     HeroSearchComponent,
+    SearchBarComponent,
   ],
   bootstrap: [AppComponent],
 })

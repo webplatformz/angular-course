@@ -4,5 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'spaced',
 })
 export class SpacedPipe implements PipeTransform {
-  transform(value: any, ...args: any[]): any {}
+  transform(value: string): string {
+    return value.split('').join(' ');
+  }
 }

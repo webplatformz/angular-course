@@ -1,11 +1,17 @@
 # Angular Course
 
-## Slides
+Repository for the course _Advanced Angular: What the «Tour of Heroes» didn't tell you_.
 
-The presentation slides for this course are on the [`slides`](https://github.com/webplatformz/angular-course/tree/slides) Branch and deployed to GitHub pages: https://webplatformz.github.io/angular-course/.
+## Getting started
 
-The presentation uses [reveal.js](https://revealjs.com/) and customisations from the [zuehlke-reveal-package](https://github.com/webplatformz/zuehlke-reveal-package).
+The `main` branch contains the starting point for the course and is based off the official [«Tour of Heroes» Angular Tutorial](https://angular.io/tutorial).
+
+Start the application using
+
+```
+npm run start
+```
 
 ## Exercises
 
-The result/solution for each exercise is commited to its own branch prefixed with `exercise/`. The `master` branch contains the starting point for the course and is based off the official [«Tour of Heroes» Angular Tutorial](https://angular.io/tutorial).
+Exercises can be found in the branches having the prefix `exercise/`. You can either open the branches locally or via [Stackblitz](https://developer.stackblitz.com/guides/integration/open-from-github#project-url). The respective solution can be found in the branches with the prefix `solution/`.

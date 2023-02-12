@@ -13,8 +13,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroSearchComponent } from './search/feature/hero-search/hero-search.component';
-import { MessagesComponent } from './messages/messages.component';
+import { MessagesComponent } from './messages/feature/messages.component';
 import { SearchBarComponent } from './search/ui/search-bar/search-bar.component';
+import { MessageBarComponent } from './messages/ui/message-bar/message-bar.component';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { SearchBarComponent } from './search/ui/search-bar/search-bar.component'
     MessagesComponent,
     HeroSearchComponent,
     SearchBarComponent,
+    MessageBarComponent,
   ],
   bootstrap: [AppComponent],
 })

@@ -1,26 +1,16 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { of } from 'rxjs';
-
-import { HeroSearchComponent } from '../search/feature/hero-search/hero-search.component';
-import { HeroService } from '../hero.service';
-import { HEROES } from '../mock-heroes';
 
 import { DashboardComponent } from './dashboard.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
-  let heroService;
-  let getHeroesSpy: jasmine.Spy;
 
   beforeEach(async () => {
-    heroService = jasmine.createSpyObj('HeroService', ['getHeroes']);
-    getHeroesSpy = heroService.getHeroes.and.returnValue(of(HEROES));
     return TestBed.configureTestingModule({
-      declarations: [DashboardComponent, HeroSearchComponent],
+      declarations: [DashboardComponent],
       imports: [RouterTestingModule.withRoutes([])],
-      providers: [{ provide: HeroService, useValue: heroService }],
     }).compileComponents();
   });
 
@@ -38,11 +28,13 @@ describe('DashboardComponent', () => {
     expect(fixture.nativeElement.querySelector('h2').textContent).toEqual('Top Heroes');
   });
 
-  it('should call heroService', () => {
-    expect(getHeroesSpy.calls.any()).toBe(true);
-  });
-
   it('should display 4 links', () => {
+    component.heroes = [
+      { id: 11, name: 'Dr Nice' },
+      { id: 12, name: 'Narco' },
+      { id: 13, name: 'Bombasto' },
+      { id: 14, name: 'Celeritas' },
+    ];
     expect(fixture.nativeElement.querySelectorAll('a').length).toEqual(4);
   });
 });

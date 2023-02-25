@@ -9,17 +9,17 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HeroSearchComponent } from './search/feature/hero-search/hero-search.component';
+import { HeroSearchComponent } from './dashboard/feature/hero-search/hero-search.component';
 import { MessagesComponent } from './messages/feature/messages.component';
-import { SearchBarComponent } from './search/ui/search-bar/search-bar.component';
+import { SearchBarComponent } from './dashboard/ui/search-bar/search-bar.component';
 import { MessageBarComponent } from './messages/ui/message-bar/message-bar.component';
 import { HeroesComponent } from './heroes/feature/heroes.component';
 import { HeroesListComponent } from './heroes/ui/heroes-list/heroes-list.component';
 import { AddHeroComponent } from './heroes/ui/add-hero/add-hero.component';
 import { HeroDetailComponent } from './hero-detail/feature/hero-detail.component';
 import { EditHeroComponent } from './hero-detail/ui/edit-hero/edit-hero.component';
-import { DashboardComponent } from './dashboard/ui/dashboard.component';
-import { HeroDashboardComponent } from './dashboard/feature/hero-dashboard.component';
+import { HeroDashboardComponent } from './dashboard/feature/hero-dashboard/hero-dashboard.component';
+import { DashboardComponent } from './dashboard/ui/dashboard/dashboard.component';
 
 @NgModule({
   imports: [

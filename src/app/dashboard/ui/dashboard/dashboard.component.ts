@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Hero } from 'src/app/hero';
+import { Hero } from 'src/app/shared/model/hero';
 
 @Component({
   selector: 'app-dashboard',

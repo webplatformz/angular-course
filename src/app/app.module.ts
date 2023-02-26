@@ -16,17 +16,16 @@ import { MessageBarComponent } from './messages/ui/message-bar/message-bar.compo
 import { HeroesComponent } from './heroes/feature/heroes.component';
 import { HeroesListComponent } from './heroes/ui/heroes-list/heroes-list.component';
 import { AddHeroComponent } from './heroes/ui/add-hero/add-hero.component';
-import { HeroDetailComponent } from './hero-detail/feature/hero-detail.component';
-import { EditHeroComponent } from './hero-detail/ui/edit-hero/edit-hero.component';
 import { HeroDashboardComponent } from './dashboard/feature/hero-dashboard/hero-dashboard.component';
 import { DashboardComponent } from './dashboard/ui/dashboard/dashboard.component';
+import { HeroDetailModule } from './hero-detail/hero-detail.module';
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    HeroDetailModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
@@ -40,8 +39,6 @@ import { DashboardComponent } from './dashboard/ui/dashboard/dashboard.component
     HeroesComponent,
     HeroesListComponent,
     AddHeroComponent,
-    HeroDetailComponent,
-    EditHeroComponent,
     MessagesComponent,
     HeroSearchComponent,
     SearchBarComponent,

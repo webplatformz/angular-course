@@ -1,7 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-import { Hero } from 'src/app/shared/model/hero';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Hero } from '../../../shared/model/hero';
 
 @Component({
   selector: 'app-edit-hero',

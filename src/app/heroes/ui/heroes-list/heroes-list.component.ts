@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Hero } from 'src/app/shared/model/hero';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Hero } from '../../../shared/model/hero';
 
 @Component({
   selector: 'app-heroes-list',

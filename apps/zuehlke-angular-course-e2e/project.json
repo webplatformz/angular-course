@@ -1,0 +1,29 @@
+{
+  "name": "zuehlke-angular-course-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/zuehlke-angular-course-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@angular-devkit/build-angular:protractor",
+      "options": {
+        "protractorConfig": "apps/zuehlke-angular-course-e2e/protractor.conf.js",
+        "devServerTarget": "zuehlke-angular-course:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "zuehlke-angular-course:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/zuehlke-angular-course-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "implicitDependencies": ["zuehlke-angular-course"],
+  "tags": []
+}

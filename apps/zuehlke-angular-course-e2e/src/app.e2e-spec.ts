@@ -14,10 +14,7 @@ class Hero {
 
   // Hero from string formatted as '<id> <name>'.
   static fromString(s: string): Hero {
-    return new Hero(
-      +s.substr(0, s.indexOf(' ')),
-      s.substr(s.indexOf(' ') + 1),
-    );
+    return new Hero(+s.substr(0, s.indexOf(' ')), s.substr(s.indexOf(' ') + 1));
   }
 
   // Hero from hero list <li> element.
@@ -35,13 +32,12 @@ class Hero {
     const name = await detail.element(by.css('h2')).getText();
     return {
       id: +id.substr(id.indexOf(' ') + 1),
-      name: name.substr(0, name.lastIndexOf(' '))
+      name: name.substr(0, name.lastIndexOf(' ')),
     };
   }
 }
 
 describe('Tutorial part 6', () => {
-
   beforeAll(() => browser.get(''));
 
   function getPageElts() {
@@ -62,12 +58,11 @@ describe('Tutorial part 6', () => {
       heroDetail: element(by.css('app-root app-hero-detail > div')),
 
       searchBox: element(by.css('#search-box')),
-      searchResults: element.all(by.css('.search-result li'))
+      searchResults: element.all(by.css('.search-result li')),
     };
   }
 
   describe('Initial page', () => {
-
     it(`has title '${expectedTitle}'`, async () => {
       expect(await browser.getTitle()).toEqual(expectedTitle);
     });
@@ -86,11 +81,9 @@ describe('Tutorial part 6', () => {
       const page = getPageElts();
       expect(await page.appDashboard.isPresent()).toBeTruthy();
     });
-
   });
 
   describe('Dashboard tests', () => {
-
     beforeAll(() => browser.get(''));
 
     it('has top heroes', async () => {
@@ -121,11 +114,9 @@ describe('Tutorial part 6', () => {
       const targetHeroElt = getPageElts().topHeroes.get(targetHeroDashboardIndex);
       expect(await targetHeroElt.getText()).toEqual(newHeroName);
     });
-
   });
 
   describe('Heroes tests', () => {
-
     beforeAll(() => browser.get(''));
 
     it('can switch to Heroes view', async () => {
@@ -164,7 +155,7 @@ describe('Tutorial part 6', () => {
       expect(await page.allHeroes.count()).toEqual(9, 'number of heroes');
       const heroesAfter = await toHeroArray(page.allHeroes);
       // console.log(await Hero.fromLi(page.allHeroes[0]));
-      const expectedHeroes =  heroesBefore.filter(h => h.name !== newHeroName);
+      const expectedHeroes = heroesBefore.filter(h => h.name !== newHeroName);
       expect(heroesAfter).toEqual(expectedHeroes);
       // expect(page.selectedHeroSubview.isPresent()).toBeFalsy();
     });
@@ -184,7 +175,7 @@ describe('Tutorial part 6', () => {
       expect(heroesAfter.slice(0, numHeroes)).toEqual(heroesBefore, 'Old heroes are still there');
 
       const maxId = heroesBefore[heroesBefore.length - 1].id;
-      expect(heroesAfter[numHeroes]).toEqual({id: maxId + 1, name: addedHeroName});
+      expect(heroesAfter[numHeroes]).toEqual({ id: maxId + 1, name: addedHeroName });
     });
 
     it('displays correctly styled buttons', async () => {
@@ -208,11 +199,9 @@ describe('Tutorial part 6', () => {
       expect(await addButton.getCssValue('padding')).toBe('8px 24px');
       expect(await addButton.getCssValue('border-radius')).toBe('4px');
     });
-
   });
 
   describe('Progressive hero search', () => {
-
     beforeAll(() => browser.get(''));
 
     it(`searches for 'Ma'`, async () => {
@@ -272,7 +261,6 @@ describe('Tutorial part 6', () => {
     expect(hero.id).toEqual(targetHero.id);
     expect(hero.name).toEqual(newHeroName.toUpperCase());
   }
-
 });
 
 async function addToHeroName(text: string): Promise<void> {

@@ -1,11 +1,8 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
-const { join } = require('path');
-const { constants } = require('karma');
-
-module.exports = () => {
-  return {
+module.exports = function (config) {
+  config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
@@ -28,16 +25,17 @@ module.exports = () => {
       suppressAll: true, // removes the duplicated traces
     },
     coverageReporter: {
-      dir: join(__dirname, './coverage'),
+      dir: require('path').join(__dirname, './coverage/zuehlke-angular-course'),
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'text-summary' }],
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
-    logLevel: constants.LOG_INFO,
+    logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: true,
-  };
+    singleRun: false,
+    restartOnFileChange: true,
+  });
 };

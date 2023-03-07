@@ -31,7 +31,7 @@ describe('Tour of Heroes', () => {
     // has top heroes
     cy.get('.heroes-menu > a').should('have.length', 4);
     // selects and routes to hero details
-    cy.contains('Magneta').click();
+    cy.contains('M A G N E T A').click();
     cy.get('h2').should('contain.text', 'MAGNETA Details');
     // updates hero name in details view
     cy.get('#hero-name').should('have.value', 'Magneta');
@@ -42,14 +42,14 @@ describe('Tour of Heroes', () => {
     cy.contains('magnetax', { matchCase: false }).should('not.exist');
     // selects and routes to hero details
     cy.get('.heroes-menu').within(() => {
-      cy.contains('Magneta').click();
+      cy.contains('M A G N E T A').click();
     });
     // updates hero name in details view
     cy.get('#hero-name').should('have.value', 'Magneta').type('Y');
     // saves and shows hero in Dashboard
     cy.contains('save').click();
     cy.get('.heroes-menu').within(() => {
-      cy.contains('magnetay', { matchCase: false });
+      cy.contains('M A G N E T A Y');
     });
   });
 

@@ -7,6 +7,7 @@ import { HeroService } from '../hero.service';
 import { HEROES } from '../mock-heroes';
 
 import { DashboardComponent } from './dashboard.component';
+import { SpacedPipe } from '../spaced.pipe';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -18,7 +19,7 @@ describe('DashboardComponent', () => {
     heroService = jasmine.createSpyObj('HeroService', ['getHeroes']);
     getHeroesSpy = heroService.getHeroes.and.returnValue(of(HEROES));
     return TestBed.configureTestingModule({
-      declarations: [DashboardComponent, HeroSearchComponent],
+      declarations: [DashboardComponent, HeroSearchComponent, SpacedPipe],
       imports: [RouterTestingModule.withRoutes([])],
       providers: [{ provide: HeroService, useValue: heroService }],
     }).compileComponents();
@@ -44,5 +45,9 @@ describe('DashboardComponent', () => {
 
   it('should display 4 links', () => {
     expect(fixture.nativeElement.querySelectorAll('a').length).toEqual(4);
+  });
+
+  it('should display hero names in uppercase and with spaces', () => {
+    expect(fixture.nativeElement.querySelectorAll('a')[0].innerHTML).toEqual(' N A R C O ');
   });
 });

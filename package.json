@@ -10,7 +10,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test-ci": "ng test --no-watch --browsers=ChromeHeadless",
-    "e2e": "ng e2e",
+    "e2e": "npx cypress run",
+    "e2e:open": "npx cypress open",
     "lint": "ng lint",
     "lint-fix": "ng lint --fix",
     "prepare": "husky install"
@@ -44,6 +45,7 @@
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
     "copyfiles": "^2.4.1",
+    "cypress": "^12.8.0",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",

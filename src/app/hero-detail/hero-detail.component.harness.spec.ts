@@ -3,7 +3,7 @@ import { HeroDetailComponent } from './hero-detail.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RouterTestingHarness } from '@angular/router/testing';
 import { provideRouter } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('HeroDetailComponent with Harness', () => {
   let harness: RouterTestingHarness;
@@ -11,7 +11,7 @@ describe('HeroDetailComponent with Harness', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormsModule, HttpClientTestingModule],
+      imports: [ReactiveFormsModule, HttpClientTestingModule],
       providers: [provideRouter([{ path: 'heroes/:id', component: HeroDetailComponent }])],
       declarations: [HeroDetailComponent],
     });
@@ -43,12 +43,15 @@ describe('HeroDetailComponent with Harness', () => {
     expect(el.textContent).toEqual('FOO Details');
   });
 
-  it('populates form', () => {
-    const name: HTMLInputElement = query('#hero-name');
-    expect(name.value).toEqual('foo');
+  it('populates FormGroup', () => {
+    expect(subject.heroForm.controls.name.value).toEqual('foo');
+    expect(subject.heroForm.controls.description.value).toEqual('bar');
+  });
 
-    const description: HTMLInputElement = query('#hero-description');
-    expect(description.value).toEqual('bar');
+  it('validates form input', () => {
+    subject.heroForm.controls.name.setValue('');
+    expect(subject.heroForm.controls.name.valid).toBeFalse();
+    expect(subject.heroForm.valid).toBeFalse();
   });
 
   it('saves hero with submitted form input', async () => {
@@ -56,17 +59,17 @@ describe('HeroDetailComponent with Harness', () => {
     const name: HTMLInputElement = query('#hero-name');
     name.value = 'baz'; // set input value
     name.dispatchEvent(new Event('input')); // tell Angular
-    expect(subject.hero?.name).toEqual('baz');
 
     // update description in form
     const description: HTMLInputElement = query('#hero-description');
     description.value = 'bam'; // set input value
     description.dispatchEvent(new Event('input')); // tell Angular
-    expect(subject.hero?.description).toEqual('bam');
 
     // submit form
     const submit: HTMLButtonElement = harness.routeNativeElement!.querySelector('#save-hero-button')!;
     submit.click();
+    expect(subject.hero.name).toEqual('baz');
+    expect(subject.hero.description).toEqual('bam');
     TestBed.inject(HttpTestingController).expectOne({ method: 'PUT', url: 'api/heroes/1337' });
   });
 });

@@ -1,0 +1,5 @@
+<h2>My Heroes</h2>
+
+<app-add-hero (add)="addHero($event)" />
+
+<app-heroes-list [heroes]="heroes" (delete)="deleteHero($event)" />

@@ -28,6 +28,8 @@ describe('Tour of Heroes', () => {
   });
 
   it('Dashboard Tests', () => {
+    // displays messages
+    cy.get('app-messages').contains('fetched heroes');
     // has top heroes
     cy.get('.heroes-menu > a').should('have.length', 4);
     // selects and routes to hero details

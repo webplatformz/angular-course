@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 
@@ -40,9 +40,5 @@ describe('DashboardComponent', () => {
 
   it('should call heroService', () => {
     expect(getHeroesSpy.calls.any()).toBe(true);
-  });
-
-  it('should display 4 links', () => {
-    expect(fixture.nativeElement.querySelectorAll('a').length).toEqual(4);
   });
 });

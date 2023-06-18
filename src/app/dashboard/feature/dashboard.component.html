@@ -2,4 +2,4 @@
 
 <app-heroes-menu [heroes]="heroes" />
 
-<app-hero-search />
+<app-hero-search [searchResults]="foundHeroes$ | async" (changeSearchTerm)="search($event)" />

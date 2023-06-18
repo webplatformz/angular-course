@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/feature/messages.component';
 import { MessageBarComponent } from './messages/ui/message-bar/message-bar.component';
 import { HeroesComponent } from './heroes/feature/heroes.component';
@@ -16,6 +15,7 @@ import { HeroDetailComponent } from './hero-detail/feature/hero-detail.component
 import { EditHeroComponent } from './hero-detail/ui/edit-hero/edit-hero.component';
 import { DashboardComponent } from './dashboard/feature/dashboard.component';
 import { HeroesMenuComponent } from './dashboard/ui/heroes-menu/heroes-menu.component';
+import { HeroSearchComponent } from './dashboard/ui/hero-search/hero-search.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],

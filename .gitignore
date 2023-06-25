@@ -49,3 +49,4 @@ Thumbs.db
 # Cypress artifacts
 /cypress/videos/
 /cypress/screenshots/
+/src/api/db.json.bak

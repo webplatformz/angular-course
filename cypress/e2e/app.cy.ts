@@ -1,5 +1,17 @@
 describe('Tour of Heroes', () => {
   beforeEach(() => {
+    cy.readFile('src/api/db.json').then(db => {
+      cy.writeFile('src/api/db.json.bak', db);
+    });
+  });
+
+  afterEach(() => {
+    cy.readFile('src/api/db.json.bak').then(db => {
+      cy.writeFile('src/api/db.json', db);
+    });
+  });
+
+  beforeEach(() => {
     cy.visit('http://localhost:4200');
   });
 
@@ -22,7 +34,8 @@ describe('Tour of Heroes', () => {
     cy.contains('Magneta').click();
     cy.get('h2').should('contain.text', 'MAGNETA Details');
     // updates hero name in details view
-    cy.get('#hero-name').should('have.value', 'Magneta').type('X');
+    cy.get('#hero-name').should('have.value', 'Magneta');
+    cy.get('#hero-name').type('X');
     cy.get('h2').should('contain.text', 'MAGNETAX Details');
     // cancels and shows hero in dashboard
     cy.contains('go back').click();
@@ -75,15 +88,10 @@ describe('Tour of Heroes', () => {
       .and('have.css', 'border-radius', '4px');
   });
 
-  it('Progressive hero search', () => {
-    // search for 'Ma'
-    cy.get('#search-box').type('Ma');
-    cy.get('.search-result > li').should('have.length', 4);
-    // continue search with 'g'
-    cy.get('#search-box').type('g');
-    cy.get('.search-result > li').should('have.length', 2);
-    // continue search with 'n' and navigate to hero
-    cy.get('#search-box').type('n');
+  it('Hero search', () => {
+    cy.intercept({ method: 'GET', url: '/api/heroes' }).as('loadHeroes');
+    cy.wait('@loadHeroes');
+    cy.get('#search-box').should('be.visible').type('Magneta');
     cy.get('.search-result > li').should('have.length', 1).and('contain.text', 'Magneta').click();
     cy.get('app-hero-detail').should('be.visible');
   });

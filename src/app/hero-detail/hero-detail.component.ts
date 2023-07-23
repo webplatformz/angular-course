@@ -13,9 +13,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class HeroDetailComponent implements OnInit {
   hero!: Hero;
-  heroForm!: FormGroup<{ name: FormControl<string | null>; description: FormControl<string | null | undefined> }>;
+  heroForm = new FormGroup({
+    name: new FormControl<string>('', Validators.required),
+    description: new FormControl<string>(''),
+  });
 
-  constructor(private route: ActivatedRoute, private heroService: HeroService, private location: Location) {}
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private location: Location,
+  ) {}
 
   ngOnInit(): void {
     this.getHero();
@@ -25,14 +32,14 @@ export class HeroDetailComponent implements OnInit {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.heroService.getHero(id).subscribe(hero => {
       this.hero = hero;
-      this.createForm(hero);
+      this.updateForm(hero);
     });
   }
 
-  private createForm(hero: Hero) {
-    this.heroForm = new FormGroup({
-      name: new FormControl<string>(hero.name, Validators.required),
-      description: new FormControl<string | undefined>(hero.description),
+  private updateForm(hero: Hero) {
+    this.heroForm.patchValue({
+      name: hero.name,
+      description: hero.description,
     });
   }
 

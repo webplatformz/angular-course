@@ -3,11 +3,16 @@ import { Hero } from '../../shared/model/hero';
 import { HeroService } from '../../shared/data-access/hero.service';
 import { Observable, Subject, switchMap } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { AsyncPipe } from '@angular/common';
+import { HeroSearchComponent } from '../ui/hero-search/hero-search.component';
+import { HeroesMenuComponent } from '../ui/heroes-menu/heroes-menu.component';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
+  standalone: true,
+  imports: [HeroesMenuComponent, HeroSearchComponent, AsyncPipe],
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
@@ -32,7 +37,7 @@ export class DashboardComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.heroService.searchHeroes(term))
+      switchMap((term: string) => this.heroService.searchHeroes(term)),
     );
   }
 

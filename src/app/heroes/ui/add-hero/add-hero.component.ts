@@ -4,6 +4,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   selector: 'app-add-hero',
   templateUrl: './add-hero.component.html',
   styleUrls: ['./add-hero.component.css'],
+  standalone: true,
 })
 export class AddHeroComponent {
   @Output()

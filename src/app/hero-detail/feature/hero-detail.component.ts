@@ -4,15 +4,22 @@ import { Location } from '@angular/common';
 
 import { Hero } from '../../shared/model/hero';
 import { HeroService } from '../../shared/data-access/hero.service';
+import { EditHeroComponent } from '../ui/edit-hero/edit-hero.component';
 
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
+  standalone: true,
+  imports: [EditHeroComponent],
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;
 
-  constructor(private route: ActivatedRoute, private heroService: HeroService, private location: Location) {}
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private location: Location,
+  ) {}
 
   ngOnInit(): void {
     this.getHero();

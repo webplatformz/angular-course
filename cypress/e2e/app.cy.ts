@@ -1,13 +1,13 @@
 describe('Tour of Heroes', () => {
   beforeEach(() => {
-    cy.readFile('src/api/db.json').then(db => {
-      cy.writeFile('src/api/db.json.bak', db);
+    cy.readFile('api/db.json').then(db => {
+      cy.writeFile('api/db.json.bak', db);
     });
   });
 
   afterEach(() => {
-    cy.readFile('src/api/db.json.bak').then(db => {
-      cy.writeFile('src/api/db.json', db);
+    cy.readFile('api/db.json.bak').then(db => {
+      cy.writeFile('api/db.json', db);
     });
   });
 
@@ -89,8 +89,6 @@ describe('Tour of Heroes', () => {
   });
 
   it('Hero search', () => {
-    cy.intercept({ method: 'GET', url: '/api/heroes' }).as('loadHeroes');
-    cy.wait('@loadHeroes');
     cy.get('#search-box').should('be.visible').type('Magneta');
     cy.get('.search-result > li').should('have.length', 1).and('contain.text', 'Magneta').click();
     cy.get('app-hero-detail').should('be.visible');

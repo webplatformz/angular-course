@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve & npm run start:api",
-    "start:api": "json-server --watch src/api/db.json --routes src/api/routes.json",
+    "start": "concurrently \"ng serve --open\" \"npm run start:api\"",
+    "start:api": "json-server --watch api/db.json --routes api/routes.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -44,6 +44,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
+    "concurrently": "^8.2.0",
     "copyfiles": "^2.4.1",
     "cypress": "^12.8.0",
     "eslint": "^8.45.0",

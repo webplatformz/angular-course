@@ -1,0 +1,9 @@
+label {
+  color: #435960;
+  font-weight: bold;
+}
+input {
+  font-size: 1em;
+  padding: 0.5rem;
+  margin-bottom: 10px;
+}

@@ -55,8 +55,9 @@ export class HeroDetailComponent implements OnInit {
 
   save(): void {
     if (this.hero) {
-      this.hero.name = this.heroForm.controls.name.value!;
-      this.hero.description = this.heroForm.controls.description.value!;
+      this.hero.name = this.heroForm.get('name')?.value!;
+      this.hero.description = this.heroForm.get('description')?.value!;
+      this.hero.address = this.heroForm.get('address')?.value;
 
       this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
     }

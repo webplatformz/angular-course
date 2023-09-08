@@ -10,6 +10,8 @@
     <label for="hero-description">Description: </label>
     <input id="hero-description" formControlName="description" placeholder="Hero description" name="description">
 
+    <app-address-form [parentForm]="heroForm" [address]="hero?.address"></app-address-form>
+
     <button type="button" (click)="goBack()">go back</button>
     <button id="save-hero-button" type="submit" [disabled]="!isValid()">save</button>
   </form>

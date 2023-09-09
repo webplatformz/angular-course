@@ -6,6 +6,28 @@
   width: 15em;
 }
 
+.hero-filtering {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.hero-filtering-name {
+  margin: 0 0 2em 0;
+  padding: 0;
+  width: 15em;
+}
+
+.hero-filtering-classification {
+  display: flex;
+  width: 25em;
+}
+
+.hero-filtering-classification > label {
+  text-align: center;
+  width: 33%;
+}
+
 input {
   display: block;
   width: 100%;

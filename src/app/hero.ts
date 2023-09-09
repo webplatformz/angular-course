@@ -1,5 +1,5 @@
 export enum Classification {
-  CLASSIFIED = 'CLASSIFIED',
+  CLASSIFIED = 'RESTRICTED',
   PUBLIC = 'PUBLIC',
 }
 

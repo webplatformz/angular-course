@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Hero } from '../hero';
+import { Classification, Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { HeroService } from '../hero.service';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
+  CLASSIFIED = Classification.CLASSIFIED;
 
   constructor(private heroService: HeroService) {}
 

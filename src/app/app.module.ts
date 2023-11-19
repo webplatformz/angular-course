@@ -12,6 +12,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
+import { IsFeatureOnDirective } from './is-feature-on.directive';
 
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, HttpClientModule],
@@ -22,6 +23,7 @@ import { LoggingInterceptor } from './interceptors/logging.interceptor';
     HeroDetailComponent,
     MessagesComponent,
     HeroSearchComponent,
+    IsFeatureOnDirective,
   ],
   providers: [
     {

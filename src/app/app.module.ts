@@ -13,6 +13,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { IsFeatureOnDirective } from './is-feature-on.directive';
+import { SpacedPipe } from './spaced.pipe';
 
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, HttpClientModule],
@@ -24,6 +25,7 @@ import { IsFeatureOnDirective } from './is-feature-on.directive';
     MessagesComponent,
     HeroSearchComponent,
     IsFeatureOnDirective,
+    SpacedPipe,
   ],
   providers: [
     {

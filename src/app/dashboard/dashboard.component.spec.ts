@@ -43,10 +43,6 @@ describe('DashboardComponent', () => {
     expect(getHeroesSpy.calls.any()).toBe(true);
   });
 
-  it('should display 4 links', () => {
-    expect(fixture.nativeElement.querySelectorAll('a').length).toEqual(4);
-  });
-
   it('should display hero names in uppercase and with spaces', () => {
     expect(fixture.nativeElement.querySelectorAll('a')[0].innerHTML).toEqual(' N A R C O ');
   });

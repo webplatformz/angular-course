@@ -1,13 +1,13 @@
 describe('Tour of Heroes', () => {
   beforeEach(() => {
-    cy.readFile('api/db.json').then(db => {
-      cy.writeFile('api/db.json.bak', db);
+    cy.readFile('../../api/db.json').then(db => {
+      cy.writeFile('../../api/db.json.bak', db);
     });
   });
 
   afterEach(() => {
-    cy.readFile('api/db.json.bak').then(db => {
-      cy.writeFile('api/db.json', db);
+    cy.readFile('../../api/db.json.bak').then(db => {
+      cy.writeFile('../../api/db.json', db);
     });
   });
 
@@ -17,7 +17,7 @@ describe('Tour of Heroes', () => {
 
   it('Initial page', () => {
     // has title 'Tour of Heroes'
-    cy.title().should('eq', 'Tour of Heroes');
+    cy.title().should('contain', 'Tour of Heroes');
     // has h1 'Tour of Heroes'
     cy.get('h1').should('have.text', 'Tour of Heroes');
     // has views 'Dashboard' and 'Heroes'

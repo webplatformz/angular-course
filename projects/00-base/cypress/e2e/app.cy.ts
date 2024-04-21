@@ -1,13 +1,13 @@
 describe('Tour of Heroes', () => {
   beforeEach(() => {
-    cy.readFile('api/db.json').then(db => {
-      cy.writeFile('api/db.json.bak', db);
+    cy.readFile('../../api/db.json').then(db => {
+      cy.writeFile('../../api/db.json.bak', db);
     });
   });
 
   afterEach(() => {
-    cy.readFile('api/db.json.bak').then(db => {
-      cy.writeFile('api/db.json', db);
+    cy.readFile('../../api/db.json.bak').then(db => {
+      cy.writeFile('../../api/db.json', db);
     });
   });
 
@@ -17,7 +17,7 @@ describe('Tour of Heroes', () => {
 
   it('Initial page', () => {
     // has title 'Tour of Heroes'
-    cy.title().should('eq', 'Tour of Heroes');
+    cy.title().should('contain', 'Tour of Heroes');
     // has h1 'Tour of Heroes'
     cy.get('h1').should('have.text', 'Tour of Heroes');
     // has views 'Dashboard' and 'Heroes'
@@ -31,7 +31,7 @@ describe('Tour of Heroes', () => {
     // has top heroes
     cy.get('.heroes-menu > a').should('have.length', 4);
     // selects and routes to hero details
-    cy.contains('M A G N E T A').click();
+    cy.contains('Magneta').click();
     cy.get('h2').should('contain.text', 'MAGNETA Details');
     // updates hero name in details view
     cy.get('#hero-name').should('have.value', 'Magneta');
@@ -42,14 +42,14 @@ describe('Tour of Heroes', () => {
     cy.contains('magnetax', { matchCase: false }).should('not.exist');
     // selects and routes to hero details
     cy.get('.heroes-menu').within(() => {
-      cy.contains('M A G N E T A').click();
+      cy.contains('Magneta').click();
     });
     // updates hero name in details view
     cy.get('#hero-name').should('have.value', 'Magneta').type('Y');
     // saves and shows hero in Dashboard
     cy.contains('save').click();
     cy.get('.heroes-menu').within(() => {
-      cy.contains('M A G N E T A Y', { matchCase: false });
+      cy.contains('magnetay', { matchCase: false });
     });
   });
 

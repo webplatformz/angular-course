@@ -47,6 +47,6 @@ testem.log
 Thumbs.db
 
 # Cypress artifacts
-/cypress/videos/
-/cypress/screenshots/
+*/**/cypress/videos/
+*/**/cypress/screenshots/
 /api/db.json.bak

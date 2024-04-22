@@ -124,6 +124,128 @@
           }
         }
       }
+    },
+    "01-dependency-injection": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/01-dependency-injection",
+      "sourceRoot": "projects/01-dependency-injection/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/01-dependency-injection",
+            "index": "projects/01-dependency-injection/src/index.html",
+            "main": "projects/01-dependency-injection/src/main.ts",
+            "polyfills": "projects/01-dependency-injection/src/polyfills.ts",
+            "tsConfig": "projects/01-dependency-injection/tsconfig.app.json",
+            "assets": [
+              "projects/01-dependency-injection/src/favicon.ico",
+              "projects/01-dependency-injection/src/assets"
+            ],
+            "styles": [
+              "projects/01-dependency-injection/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/01-dependency-injection/src/environments/environment.ts",
+                  "with": "projects/01-dependency-injection/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "01-dependency-injection:build:production"
+            },
+            "development": {
+              "browserTarget": "01-dependency-injection:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "01-dependency-injection:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/01-dependency-injection/src/test.ts",
+            "polyfills": "projects/01-dependency-injection/src/polyfills.ts",
+            "tsConfig": "projects/01-dependency-injection/tsconfig.spec.json",
+            "karmaConfig": "projects/01-dependency-injection/karma.conf.js",
+            "assets": [
+              "projects/01-dependency-injection/src/favicon.ico",
+              "projects/01-dependency-injection/src/assets"
+            ],
+            "styles": [
+              "projects/01-dependency-injection/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "zuehlke-angular-course:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "zuehlke-angular-course:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/01-dependency-injection/src/**/*.ts",
+              "projects/01-dependency-injection/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

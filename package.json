@@ -15,7 +15,11 @@
     "00-base:start": "ng serve 00-base",
     "00-base:test": "ng test 00-base",
     "00-base:e2e": "npx cypress run --project ./projects/00-base",
-    "00-base:e2e:open": "npx cypress open --project ./projects/00-base"
+    "00-base:e2e:open": "npx cypress open --project ./projects/00-base",
+    "01-dependency-injection:start": "ng serve 01-dependency-injection",
+    "01-dependency-injection:test": "ng test 01-dependency-injection",
+    "01-dependency-injection:e2e": "npx cypress run --project ./projects/01-dependency-injection",
+    "01-dependency-injection:e2e:open": "npx cypress open --project ./projects/01-dependency-injection"
   },
   "private": true,
   "dependencies": {

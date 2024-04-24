@@ -20,14 +20,22 @@
             "outputPath": "dist/00-base",
             "index": "projects/00-base/src/index.html",
             "main": "projects/00-base/src/main.ts",
-            "polyfills": "projects/00-base/src/polyfills.ts",
+            "polyfills": "zone.js",
             "tsConfig": "projects/00-base/tsconfig.app.json",
             "assets": [
-              "projects/00-base/src/favicon.ico",
-              "projects/00-base/src/assets"
+              {
+                "glob": "**/favicon.ico",
+                "input": "projects/shared/src",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/shared/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
-              "projects/00-base/src/styles.css"
+              "projects/shared/src/styles.css"
             ],
             "scripts": []
           },
@@ -89,15 +97,23 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/00-base/src/test.ts",
-            "polyfills": "projects/00-base/src/polyfills.ts",
+            "polyfills": "zone.js",
             "tsConfig": "projects/00-base/tsconfig.spec.json",
-            "karmaConfig": "projects/00-base/karma.conf.js",
+            "karmaConfig": "projects/shared/karma.conf.js",
             "assets": [
-              "projects/00-base/src/favicon.ico",
-              "projects/00-base/src/assets"
+              {
+                "glob": "**/favicon.ico",
+                "input": "projects/shared/src",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/shared/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
-              "projects/00-base/src/styles.css"
+              "projects/shared/src/styles.css"
             ],
             "scripts": []
           }
@@ -142,14 +158,22 @@
             "outputPath": "dist/01-dependency-injection",
             "index": "projects/01-dependency-injection/src/index.html",
             "main": "projects/01-dependency-injection/src/main.ts",
-            "polyfills": "projects/01-dependency-injection/src/polyfills.ts",
+            "polyfills": "zone.js",
             "tsConfig": "projects/01-dependency-injection/tsconfig.app.json",
             "assets": [
-              "projects/01-dependency-injection/src/favicon.ico",
-              "projects/01-dependency-injection/src/assets"
+              {
+                "glob": "**/favicon.ico",
+                "input": "projects/shared/src",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/shared/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
-              "projects/01-dependency-injection/src/styles.css"
+              "projects/shared/src/styles.css"
             ],
             "scripts": []
           },
@@ -211,15 +235,23 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/01-dependency-injection/src/test.ts",
-            "polyfills": "projects/01-dependency-injection/src/polyfills.ts",
+            "polyfills": "zone.js",
             "tsConfig": "projects/01-dependency-injection/tsconfig.spec.json",
-            "karmaConfig": "projects/01-dependency-injection/karma.conf.js",
+            "karmaConfig": "projects/shared/karma.conf.js",
             "assets": [
-              "projects/01-dependency-injection/src/favicon.ico",
-              "projects/01-dependency-injection/src/assets"
+              {
+                "glob": "**/favicon.ico",
+                "input": "projects/shared/src",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/shared/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
-              "projects/01-dependency-injection/src/styles.css"
+              "projects/shared/src/styles.css"
             ],
             "scripts": []
           }

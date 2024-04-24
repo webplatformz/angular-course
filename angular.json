@@ -41,18 +41,6 @@
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
               "fileReplacements": [
                 {
                   "replace": "projects/00-base/src/environments/environment.ts",
@@ -118,18 +106,6 @@
             "scripts": []
           }
         },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "zuehlke-angular-course:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "zuehlke-angular-course:serve:production"
-            }
-          }
-        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
@@ -179,18 +155,6 @@
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
               "fileReplacements": [
                 {
                   "replace": "projects/01-dependency-injection/src/environments/environment.ts",
@@ -254,18 +218,6 @@
               "projects/shared/src/styles.css"
             ],
             "scripts": []
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "zuehlke-angular-course:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "zuehlke-angular-course:serve:production"
-            }
           }
         },
         "lint": {

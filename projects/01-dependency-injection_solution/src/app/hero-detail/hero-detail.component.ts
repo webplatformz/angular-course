@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { LoggingService } from '../logging.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -14,7 +15,7 @@ export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;
 
   constructor(
-    // todo: inject logging: LoggingService,
+    private logging: LoggingService,
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location,
@@ -27,7 +28,7 @@ export class HeroDetailComponent implements OnInit {
   getHero(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.heroService.getHero(id).subscribe(hero => (this.hero = hero));
-    // todo: use logging (LoggingService) to log id of hero
+    this.logging.log(`Selected heroes id is ${id}`);
   }
 
   goBack(): void {

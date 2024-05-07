@@ -67,10 +67,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "00-base:build:production"
+              "buildTarget": "00-base:build:production"
             },
             "development": {
-              "browserTarget": "00-base:build:development"
+              "buildTarget": "00-base:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "00-base:build"
+            "buildTarget": "00-base:build"
           }
         },
         "test": {
@@ -181,10 +181,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "01-dependency-injection:build:production"
+              "buildTarget": "01-dependency-injection:build:production"
             },
             "development": {
-              "browserTarget": "01-dependency-injection:build:development"
+              "buildTarget": "01-dependency-injection:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -192,7 +192,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "01-dependency-injection:build"
+            "buildTarget": "01-dependency-injection:build"
           }
         },
         "test": {
@@ -295,10 +295,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "01-dependency-injection_solution:build:production"
+              "buildTarget": "01-dependency-injection_solution:build:production"
             },
             "development": {
-              "browserTarget": "01-dependency-injection_solution:build:development"
+              "buildTarget": "01-dependency-injection_solution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -306,7 +306,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "01-dependency-injection_solution:build"
+            "buildTarget": "01-dependency-injection_solution:build"
           }
         },
         "test": {

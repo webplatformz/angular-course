@@ -12,9 +12,9 @@ describe('HeroDetailComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [HttpClientTestingModule, RouterTestingModule, HeroDetailComponent],
-    providers: [{ provide: ActivatedRoute, useValue: { snapshot: { paramMap: convertToParamMap({ id: 1337 }) } } }],
-});
+      imports: [HttpClientTestingModule, RouterTestingModule, HeroDetailComponent],
+      providers: [{ provide: ActivatedRoute, useValue: { snapshot: { paramMap: convertToParamMap({ id: 1337 }) } } }],
+    });
 
     const fixture = TestBed.createComponent(HeroDetailComponent);
     subject = fixture.componentInstance;

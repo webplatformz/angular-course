@@ -5,11 +5,10 @@ label {
   font-weight: bold;
   font-size: 1.2rem;
   margin-top: 1rem;
-  margin-bottom: .5rem;
-
+  margin-bottom: 0.5rem;
 }
 input {
-  padding: .5rem;
+  padding: 0.5rem;
   width: 100%;
   max-width: 600px;
   box-sizing: border-box;
@@ -30,14 +29,14 @@ li {
   display: inline-block;
   width: 100%;
   max-width: 600px;
-  padding: .5rem;
+  padding: 0.5rem;
   box-sizing: border-box;
   text-decoration: none;
   color: black;
 }
 
 .search-result li a:hover {
-  background-color: #435A60;
+  background-color: #435a60;
   color: white;
 }
 

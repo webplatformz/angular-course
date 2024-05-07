@@ -18,9 +18,9 @@ describe('DashboardComponent', () => {
     heroService = jasmine.createSpyObj('HeroService', ['getHeroes']);
     getHeroesSpy = heroService.getHeroes.and.returnValue(of(HEROES));
     return TestBed.configureTestingModule({
-    imports: [RouterTestingModule.withRoutes([]), DashboardComponent, HeroSearchComponent],
-    providers: [{ provide: HeroService, useValue: heroService }],
-}).compileComponents();
+      imports: [RouterTestingModule.withRoutes([]), DashboardComponent, HeroSearchComponent],
+      providers: [{ provide: HeroService, useValue: heroService }],
+    }).compileComponents();
   });
 
   beforeEach(() => {

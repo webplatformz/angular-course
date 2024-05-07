@@ -25,7 +25,11 @@
     "01-dependency-injection_solution:start": "ng serve 01-dependency-injection_solution",
     "01-dependency-injection_solution:test": "ng test 01-dependency-injection_solution",
     "01-dependency-injection_solution:e2e": "npm run e2e -- -P ./projects/01-dependency-injection_solution",
-    "01-dependency-injection_solution:e2e:open": "npm run e2e:open -- -P ./projects/01-dependency-injection_solution"
+    "01-dependency-injection_solution:e2e:open": "npm run e2e:open -- -P ./projects/01-dependency-injection_solution",
+    "02-template-driven-forms:start": "ng serve 02-template-driven-forms",
+    "02-template-driven-forms:test": "ng test 02-template-driven-forms",
+    "02-template-driven-forms:e2e": "npm run e2e -- -P ./projects/02-template-driven-forms",
+    "02-template-driven-forms:e2e:open": "npm run e2e:open -- -P ./projects/02-template-driven-forms"
   },
   "private": true,
   "dependencies": {

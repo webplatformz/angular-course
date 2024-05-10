@@ -33,7 +33,15 @@
     "02-template-driven-forms_solution:start": "ng serve 02-template-driven-forms_solution",
     "02-template-driven-forms_solution:test": "ng test 02-template-driven-forms_solution",
     "02-template-driven-forms_solution:e2e": "npm run e2e -- -P ./projects/02-template-driven-forms_solution",
-    "02-template-driven-forms_solution:e2e:open": "npm run e2e:open -- -P ./projects/02-template-driven-forms_solution"
+    "02-template-driven-forms_solution:e2e:open": "npm run e2e:open -- -P ./projects/02-template-driven-forms_solution",
+    "03-reactive-forms:start": "ng serve 03-reactive-forms",
+    "03-reactive-forms:test": "ng test 03-reactive-forms",
+    "03-reactive-forms:e2e": "npm run e2e -- -P ./projects/03-reactive-forms",
+    "03-reactive-forms:e2e:open": "npm run e2e:open -- -P ./projects/03-reactive-forms",
+    "03-reactive-forms_solution:start": "ng serve 03-reactive-forms_solution",
+    "03-reactive-forms_solution:test": "ng test 03-reactive-forms_solution",
+    "03-reactive-forms_solution:e2e": "npm run e2e -- -P ./projects/03-reactive-forms_solution",
+    "03-reactive-forms_solution:e2e:open": "npm run e2e:open -- -P ./projects/03-reactive-forms_solution"
   },
   "private": true,
   "dependencies": {

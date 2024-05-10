@@ -1,0 +1,21 @@
+@if (heroForm) {
+<div>
+  <!-- todo: read name from heroForm -->
+  <h2>{{ '' | uppercase }} Details</h2>
+  <form (ngSubmit)="save()" [formGroup]="heroForm">
+    <div><span>id: </span>{{ hero?.id }}</div>
+
+    <label for="hero-name">Hero name: </label>
+    <!-- todo: complete formControlName attribute -->
+    <input id="hero-name" formControlName="" placeholder="Hero name" name="name" />
+
+    <label for="hero-description">Description: </label>
+    <!-- todo: complete formControlName attribute -->
+    <input id="hero-description" formControlName="" placeholder="Hero description" name="description" />
+
+    <button type="button" (click)="goBack()">go back</button>
+    <!-- todo: complete disabled attribute -->
+    <button id="save-hero-button" type="submit" [disabled]="true">save</button>
+  </form>
+</div>
+}

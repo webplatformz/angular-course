@@ -1,4 +1,4 @@
-import { HttpClientTestingModule, HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { HttpClient, provideHttpClient, withInterceptors } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import stringMatching = jasmine.stringMatching;
@@ -10,7 +10,6 @@ describe('loggingInteceptor (integration)', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule], // todo: still required?
       providers: [provideHttpClient(withInterceptors([loggingInterceptor])), provideHttpClientTesting()],
     });
 

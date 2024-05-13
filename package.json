@@ -45,7 +45,15 @@
     "04-change-detection:start": "ng serve 04-change-detection",
     "04-change-detection:test": "ng test 04-change-detection",
     "04-change-detection:e2e": "npm run e2e -- -P ./projects/04-change-detection",
-    "04-change-detection:e2e:open": "npm run e2e:open -- -P ./projects/04-change-detection"
+    "04-change-detection:e2e:open": "npm run e2e:open -- -P ./projects/04-change-detection",
+    "05-guard:start": "ng serve 05-guard",
+    "05-guard:test": "ng test 05-guard",
+    "05-guard:e2e": "npm run e2e -- -P ./projects/05-guard",
+    "05-guard:e2e:open": "npm run e2e:open -- -P ./projects/05-guard",
+    "05-guard_solution:start": "ng serve 05-guard_solution",
+    "05-guard_solution:test": "ng test 05-guard_solution",
+    "05-guard_solution:e2e": "npm run e2e -- -P ./projects/05-guard_solution",
+    "05-guard_solution:e2e:open": "npm run e2e:open -- -P ./projects/05-guard_solution"
   },
   "private": true,
   "dependencies": {

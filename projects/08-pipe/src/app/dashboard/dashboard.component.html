@@ -1,0 +1,11 @@
+<h2>Top Heroes</h2>
+<div class="heroes-menu">
+  @for (hero of heroes; track hero) {
+  <a routerLink="/detail/{{ hero.id }}">
+    <!-- todo: use spaced and uppercase pipes -->
+    {{ hero.name }}
+  </a>
+  }
+</div>
+
+<app-hero-search />

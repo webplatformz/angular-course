@@ -69,7 +69,15 @@
     "07-directive_solution:start": "ng serve 07-directive_solution",
     "07-directive_solution:test": "ng test 07-directive_solution",
     "07-directive_solution:e2e": "npm run e2e -- -P ./projects/07-directive_solution",
-    "07-directive_solution:e2e:open": "npm run e2e:open -- -P ./projects/07-directive_solution"
+    "07-directive_solution:e2e:open": "npm run e2e:open -- -P ./projects/07-directive_solution",
+    "08-pipe:start": "ng serve 08-pipe",
+    "08-pipe:test": "ng test 08-pipe",
+    "08-pipe:e2e": "npm run e2e -- -P ./projects/08-pipe",
+    "08-pipe:e2e:open": "npm run e2e:open -- -P ./projects/08-pipe",
+    "08-pipe_solution:start": "ng serve 08-pipe_solution",
+    "08-pipe_solution:test": "ng test 08-pipe_solution",
+    "08-pipe_solution:e2e": "npm run e2e -- -P ./projects/08-pipe_solution",
+    "08-pipe_solution:e2e:open": "npm run e2e:open -- -P ./projects/08-pipe_solution"
   },
   "private": true,
   "dependencies": {

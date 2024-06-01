@@ -5,7 +5,7 @@ import { Location, UpperCasePipe } from '@angular/common';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { LoggingService } from '../logging.service';
-import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-hero-detail',

@@ -1,8 +1,8 @@
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { HttpClient, provideHttpClient, withInterceptors } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import stringMatching = jasmine.stringMatching;
 import { loggingInterceptor } from './logging.interceptor';
+import stringMatching = jasmine.stringMatching;
 
 describe('loggingInteceptor (integration)', () => {
   let httpClient: HttpClient;

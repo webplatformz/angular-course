@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from '../../../06-interceptor_solution/src/app/app.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import SpyObj = jasmine.SpyObj;
-import createSpyObj = jasmine.createSpyObj;
 import { FeatureService } from './feature-toggle/feature.service';
 import { IsFeatureOnDirective } from './feature-toggle/is-feature-on.directive';
 import { RouterTestingModule } from '@angular/router/testing';
+import SpyObj = jasmine.SpyObj;
+import createSpyObj = jasmine.createSpyObj;
 
 describe('AppComponent', function () {
   let fixture: ComponentFixture<AppComponent>;

@@ -5,8 +5,7 @@ import { AppComponent } from './app/app.component';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { AppRoutingModule } from './app/app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
-import { loggingInterceptor } from './app/logging.interceptor';
+import { bootstrapApplication, BrowserModule } from '@angular/platform-browser';
 
 if (environment.production) {
   enableProdMode();

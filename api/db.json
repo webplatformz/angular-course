@@ -8,7 +8,8 @@
     {
       "id": 12,
       "name": "Narco",
-      "classification": "PUBLIC"
+      "classification": "PUBLIC",
+      "description": ""
     },
     {
       "id": 13,

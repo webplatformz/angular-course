@@ -77,7 +77,15 @@
     "08-pipe_solution:start": "ng serve 08-pipe_solution",
     "08-pipe_solution:test": "ng test 08-pipe_solution",
     "08-pipe_solution:e2e": "npm run e2e -- -P ./projects/08-pipe_solution",
-    "08-pipe_solution:e2e:open": "npm run e2e:open -- -P ./projects/08-pipe_solution"
+    "08-pipe_solution:e2e:open": "npm run e2e:open -- -P ./projects/08-pipe_solution",
+    "09-smart-dumb:start": "ng serve 09-smart-dumb",
+    "09-smart-dumb:test": "ng test 09-smart-dumb",
+    "09-smart-dumb:e2e": "npm run e2e -- -P ./projects/09-smart-dumb",
+    "09-smart-dumb:e2e:open": "npm run e2e:open -- -P ./projects/09-smart-dumb",
+    "09-smart-dumb_solution:start": "ng serve 09-smart-dumb_solution",
+    "09-smart-dumb_solution:test": "ng test 09-smart-dumb_solution",
+    "09-smart-dumb_solution:e2e": "npm run e2e -- -P ./projects/09-smart-dumb_solution",
+    "09-smart-dumb_solution:e2e:open": "npm run e2e:open -- -P ./projects/09-smart-dumb_solution"
   },
   "private": true,
   "dependencies": {

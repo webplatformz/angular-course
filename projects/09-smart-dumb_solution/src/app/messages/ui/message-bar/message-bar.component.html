@@ -1,0 +1,9 @@
+@if (messages?.length) {
+  <div>
+    <h2>Messages</h2>
+    <button type="button" class="clear" (click)="clearMessages()">Clear messages</button>
+    @for (message of messages; track message) {
+      <div>{{ message }}</div>
+    }
+  </div>
+}

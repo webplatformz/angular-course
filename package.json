@@ -93,7 +93,15 @@
     "10-stateful-service_solution:start": "ng serve 10-stateful-service_solution",
     "10-stateful-service_solution:test": "ng test 10-stateful-service_solution",
     "10-stateful-service_solution:e2e": "npm run e2e -- -P ./projects/10-stateful-service_solution",
-    "10-stateful-service_solution:e2e:open": "npm run e2e:open -- -P ./projects/10-stateful-service_solution"
+    "10-stateful-service_solution:e2e:open": "npm run e2e:open -- -P ./projects/10-stateful-service_solution",
+    "11-signals:start": "ng serve 11-signals",
+    "11-signals:test": "ng test 11-signals",
+    "11-signals:e2e": "npm run e2e -- -P ./projects/11-signals",
+    "11-signals:e2e:open": "npm run e2e:open -- -P ./projects/11-signals",
+    "11-signals_solution:start": "ng serve 11-signals_solution",
+    "11-signals_solution:test": "ng test 11-signals_solution",
+    "11-signals_solution:e2e": "npm run e2e -- -P ./projects/11-signals_solution",
+    "11-signals_solution:e2e:open": "npm run e2e:open -- -P ./projects/11-signals_solution"
   },
   "private": true,
   "dependencies": {

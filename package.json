@@ -85,7 +85,15 @@
     "09-smart-dumb_solution:start": "ng serve 09-smart-dumb_solution",
     "09-smart-dumb_solution:test": "ng test 09-smart-dumb_solution",
     "09-smart-dumb_solution:e2e": "npm run e2e -- -P ./projects/09-smart-dumb_solution",
-    "09-smart-dumb_solution:e2e:open": "npm run e2e:open -- -P ./projects/09-smart-dumb_solution"
+    "09-smart-dumb_solution:e2e:open": "npm run e2e:open -- -P ./projects/09-smart-dumb_solution",
+    "10-stateful-service:start": "ng serve 10-stateful-service",
+    "10-stateful-service:test": "ng test 10-stateful-service",
+    "10-stateful-service:e2e": "npm run e2e -- -P ./projects/10-stateful-service",
+    "10-stateful-service:e2e:open": "npm run e2e:open -- -P ./projects/10-stateful-service",
+    "10-stateful-service_solution:start": "ng serve 10-stateful-service_solution",
+    "10-stateful-service_solution:test": "ng test 10-stateful-service_solution",
+    "10-stateful-service_solution:e2e": "npm run e2e -- -P ./projects/10-stateful-service_solution",
+    "10-stateful-service_solution:e2e:open": "npm run e2e:open -- -P ./projects/10-stateful-service_solution"
   },
   "private": true,
   "dependencies": {

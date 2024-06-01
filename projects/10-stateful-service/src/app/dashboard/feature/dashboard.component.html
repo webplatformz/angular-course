@@ -1,0 +1,5 @@
+<h2>Top Heroes</h2>
+
+<app-heroes-menu [heroes]="heroes" />
+
+<app-hero-search [searchResults]="foundHeroes$ | async" (changeSearchTerm)="search($event)" />

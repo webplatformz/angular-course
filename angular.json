@@ -2054,6 +2054,234 @@
           }
         }
       }
+    },
+    "10-stateful-service": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/10-stateful-service",
+      "sourceRoot": "projects/10-stateful-service/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/10-stateful-service",
+            "index": "projects/10-stateful-service/src/index.html",
+            "main": "projects/10-stateful-service/src/main.ts",
+            "polyfills": "zone.js",
+            "tsConfig": "projects/10-stateful-service/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/favicon.ico",
+                "input": "projects/shared/src",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/shared/src/assets",
+                "output": "assets"
+              }
+            ],
+            "styles": [
+              "projects/shared/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/10-stateful-service/src/environments/environment.ts",
+                  "with": "projects/10-stateful-service/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "10-stateful-service:build:production"
+            },
+            "development": {
+              "browserTarget": "10-stateful-service:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "10-stateful-service:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/10-stateful-service/src/test.ts",
+            "polyfills": "zone.js",
+            "tsConfig": "projects/10-stateful-service/tsconfig.spec.json",
+            "karmaConfig": "projects/shared/karma.conf.js",
+            "assets": [
+              {
+                "glob": "**/favicon.ico",
+                "input": "projects/shared/src",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/shared/src/assets",
+                "output": "assets"
+              }
+            ],
+            "styles": [
+              "projects/shared/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/10-stateful-service/src/**/*.ts",
+              "projects/10-stateful-service/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "10-stateful-service_solution": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/10-stateful-service_solution",
+      "sourceRoot": "projects/10-stateful-service_solution/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/10-stateful-service_solution",
+            "index": "projects/10-stateful-service_solution/src/index.html",
+            "main": "projects/10-stateful-service_solution/src/main.ts",
+            "polyfills": "zone.js",
+            "tsConfig": "projects/10-stateful-service_solution/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/favicon.ico",
+                "input": "projects/shared/src",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/shared/src/assets",
+                "output": "assets"
+              }
+            ],
+            "styles": [
+              "projects/shared/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/10-stateful-service_solution/src/environments/environment.ts",
+                  "with": "projects/10-stateful-service_solution/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "10-stateful-service_solution:build:production"
+            },
+            "development": {
+              "browserTarget": "10-stateful-service_solution:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "10-stateful-service_solution:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/10-stateful-service_solution/src/test.ts",
+            "polyfills": "zone.js",
+            "tsConfig": "projects/10-stateful-service_solution/tsconfig.spec.json",
+            "karmaConfig": "projects/shared/karma.conf.js",
+            "assets": [
+              {
+                "glob": "**/favicon.ico",
+                "input": "projects/shared/src",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/shared/src/assets",
+                "output": "assets"
+              }
+            ],
+            "styles": [
+              "projects/shared/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/10-stateful-service_solution/src/**/*.ts",
+              "projects/10-stateful-service_solution/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

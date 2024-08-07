@@ -11,7 +11,7 @@ The subproject [00-base](projects/00-base) is your starting point and is based o
 
 ### Prerequisites
 * [Node.js](https://nodejs.org/en/) installed (LTS version)
-* IDEA or Editor of your choice (e.g. [IntelliJ IDEA](https://www.jetbrains.com/idea/))
+* IDEA or editor of your choice (e.g. [IntelliJ IDEA](https://www.jetbrains.com/idea/))
 * Terminal for running CLI commands
 
 ### Instructions
@@ -43,7 +43,7 @@ To start the app of any exercise or solution use the respective run command endi
 
 Hint: [package.json](package.json) contains commands for running and testing each exercise and solution app.
 
-Once built, the Angular app opens in the browser. Alternatively, you can navigate to [localhost:4200](). Please note that only one subproject run at a time.
+Once built, the Angular app opens in the browser. Alternatively, you can navigate to [localhost:4200](). Please note that only one subproject runs at a time.
 
 
 ## Exercises

@@ -17,7 +17,7 @@ The subproject [00-base](projects/00-base) is your starting point and is based o
 ### Instructions
 
 #### Install Angular CLI
-Open a terminal (if you're using an IDEA, you can open an integrated terminal) and run the following command:
+Open a terminal and run the following command:
 
 ```
 npm install -g @angular/cli

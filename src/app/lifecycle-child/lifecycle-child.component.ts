@@ -16,32 +16,32 @@ export class LifecycleChildComponent implements OnInit, OnChanges, DoCheck, Afte
   msgBuffer: string = "";
 
   constructor() {
-    this.msgBuffer = this.creatCustomMsg('1 Constructor executed');
+    this.msgBuffer = this.creatCustomMsg('[1] Constructor executed');
   }
 
   ngOnInit(): void {
-    this.sendLogs('2 ngOnInit executed')  
+    this.sendLogs('[2] ngOnInit executed')  
   }
   ngOnChanges(changes: SimpleChanges): void {
-    this.sendLogs('3 ngOnChanges executed')  
+    this.sendLogs('[3] ngOnChanges executed')  
   }
   ngDoCheck(): void {
-    this.sendLogs('4 ngDoCheck executed')  
+    this.sendLogs('[4] ngDoCheck executed')  
   }
   ngAfterContentInit(): void {
-    this.sendLogs('5 ngAfterContentInit executed')  
+    this.sendLogs('[5] ngAfterContentInit executed')  
   }
   ngAfterContentChecked(): void {
-    this.sendLogs('6 ngAfterContentChecked executed')  
+    this.sendLogs('[6] ngAfterContentChecked executed')  
   }
   ngAfterViewInit(): void {
-    this.sendLogs('7 ngAfterViewInit executed')  
+    this.sendLogs('[7] ngAfterViewInit executed')  
   }
   ngAfterViewChecked(): void {
-    this.sendLogs('8 ngAfterViewChecked executed')  
+    this.sendLogs('[8] ngAfterViewChecked executed')  
   }
   ngOnDestroy(): void {
-    this.sendLogs('9 ngOnDestroy executed')  
+    this.sendLogs('[9] ngOnDestroy executed')  
   }
 
   getTimestamp(): string {

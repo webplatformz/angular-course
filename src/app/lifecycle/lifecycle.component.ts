@@ -18,11 +18,15 @@ import { User } from '../user';
       <label for="title">user.name: </label>
       <input id="user.name" [(ngModel)]="user.name" />
     </div>
-    <app-child *ngIf="toggleChild" [title]="title" [user]="user" (msg)="onMsgRecieved($event)"></app-child>
+    @if(toggleChild == true) {
+      <app-child [title]="title" [user]="user" (msg)="onMsgRecieved($event)"></app-child>
+    }
     <hr>
-    <div *ngFor="let msg of msgHistory">
+    @for (msg of msgHistory; track msg) {
       <p> {{ msg }} </p>
-    </div>
+    } @empty  {
+      <p> No logs yet </p>
+    }
   `,
 })
 export class LifecycleComponent {

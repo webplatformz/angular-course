@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"ng serve --open\" \"npm run start:api\"",
+    "start": "ng serve --open",
     "start:api": "json-server --watch api/db.json --routes api/routes.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

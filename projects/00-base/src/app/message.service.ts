@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal, Signal } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class MessageService {
@@ -10,5 +11,15 @@ export class MessageService {
 
   clear() {
     this.messages = [];
+  }
+
+  observableOfMessages(): Observable<string[]> {
+
+    return of(this.messages);
+  }
+
+  signalMessages(): Signal<string[]> {
+
+    return signal(this.messages);
   }
 }

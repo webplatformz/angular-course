@@ -1,4 +1,4 @@
-<ng-container *ngIf="messageService.getMessages() | async as messages">
+<ng-container *ngIf="messageService.readonlyMessages() as messages">
   <div *ngIf="messages.length">
 
     <h2>Messages</h2>

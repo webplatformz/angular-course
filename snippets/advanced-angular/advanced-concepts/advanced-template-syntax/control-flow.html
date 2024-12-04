@@ -1,0 +1,28 @@
+<!-- replaces *ngIf -->
+@if (a > b) {
+  {{a}} is greater than {{b}}
+} @else if (b > a) {
+  {{a}} is less than {{b}}
+} @else {
+  {{a}} is equal to {{b}}
+}
+
+<!-- replaces *ngFor -->
+@for (hero of heroes; track hero.name) {
+  <li> {{ hero.name }} </li>
+} @empty {
+  <li> There are no heroes. </li>
+}
+
+<!-- replaces *ngSwitch -->
+@switch (hero.Classification) {
+  @case (Classification.CLASSIFIED) {
+    <app-hero-classified-dashboard />
+  }
+  @case (Classification.PUBLIC) {
+    <app-hero-public-dashboard />
+  }
+  @default {
+    <app-unclassified-dashboard />
+  }
+}

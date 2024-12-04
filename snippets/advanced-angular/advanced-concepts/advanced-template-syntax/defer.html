@@ -1,0 +1,20 @@
+@defer (on trigger; when condition;
+        prefetch when trigger; prefetch on condition) {
+  <!--  some template block -->
+  <app-heroes/>
+} <!--  additional blocks -->
+
+@defer (on trigger; when condition;
+        prefetch when trigger; prefetch on condition) {
+  <!--  some template block -->
+  <app-heroes/>
+} @placeholder (minimum 200ms) {
+  <!-- Content shown prior to defer loading-->
+  <!-- placeholder template block-->
+} @loading (after 500ms) {
+  <!-- Content shown during defer loading-->
+  <!-- loading template block-->
+} @error {
+  <!-- Content shown when defer loading errors occur-->
+  <!-- error template block-->
+}

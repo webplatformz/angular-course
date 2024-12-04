@@ -1,9 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { HeroDetailComponent } from './hero-detail.component';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { RouterTestingHarness } from '@angular/router/testing';
 import { provideRouter } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import objectContaining = jasmine.objectContaining;
 
 describe('HeroDetailComponent with Harness', () => {
@@ -12,9 +13,9 @@ describe('HeroDetailComponent with Harness', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, HttpClientTestingModule, HeroDetailComponent],
-      providers: [provideRouter([{ path: 'heroes/:id', component: HeroDetailComponent }])],
-    });
+    imports: [ReactiveFormsModule, HeroDetailComponent],
+    providers: [provideRouter([{ path: 'heroes/:id', component: HeroDetailComponent }]), provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+});
   });
 
   beforeEach(async () => {

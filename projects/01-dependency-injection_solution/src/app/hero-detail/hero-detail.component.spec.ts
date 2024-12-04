@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HeroDetailComponent } from './hero-detail.component';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpClient } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 
@@ -12,9 +12,9 @@ describe('HeroDetailComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule, HeroDetailComponent],
-      providers: [{ provide: ActivatedRoute, useValue: { snapshot: { paramMap: convertToParamMap({ id: 1337 }) } } }],
-    });
+    imports: [RouterTestingModule, HeroDetailComponent],
+    providers: [{ provide: ActivatedRoute, useValue: { snapshot: { paramMap: convertToParamMap({ id: 1337 }) } } }, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+});
 
     const fixture = TestBed.createComponent(HeroDetailComponent);
     subject = fixture.componentInstance;

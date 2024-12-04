@@ -1,9 +1,9 @@
 import { Router } from '@angular/router';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { Classification } from './hero';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { routes } from './app-routing.module';
 
 describe('HeroClassificationGuard', () => {
@@ -13,8 +13,9 @@ describe('HeroClassificationGuard', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule.withRoutes(routes)],
-    });
+    imports: [RouterTestingModule.withRoutes(routes)],
+    providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+});
 
     router = TestBed.inject(Router);
     httpClient = TestBed.inject(HttpClient);

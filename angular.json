@@ -15,12 +15,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser-esbuild",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/00-base",
+            "outputPath": {
+              "base": "dist/00-base"
+            },
             "index": "projects/00-base/src/index.html",
-            "main": "projects/00-base/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/00-base/tsconfig.app.json",
             "assets": [
               {
@@ -37,7 +40,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/00-base/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -50,9 +54,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -129,12 +131,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser-esbuild",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/01-dependency-injection",
+            "outputPath": {
+              "base": "dist/01-dependency-injection"
+            },
             "index": "projects/01-dependency-injection/src/index.html",
-            "main": "projects/01-dependency-injection/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/01-dependency-injection/tsconfig.app.json",
             "assets": [
               {
@@ -151,7 +156,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/01-dependency-injection/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -164,9 +170,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -243,12 +247,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser-esbuild",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/01-dependency-injection_solution",
+            "outputPath": {
+              "base": "dist/01-dependency-injection_solution"
+            },
             "index": "projects/01-dependency-injection_solution/src/index.html",
-            "main": "projects/01-dependency-injection_solution/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/01-dependency-injection_solution/tsconfig.app.json",
             "assets": [
               {
@@ -265,7 +272,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/01-dependency-injection_solution/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -278,9 +286,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -357,12 +363,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/02-template-driven-forms",
+            "outputPath": {
+              "base": "dist/02-template-driven-forms"
+            },
             "index": "projects/02-template-driven-forms/src/index.html",
-            "main": "projects/02-template-driven-forms/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/02-template-driven-forms/tsconfig.app.json",
             "assets": [
               {
@@ -379,7 +388,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/02-template-driven-forms/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -392,9 +402,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -471,12 +479,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/02-template-driven-forms_solution",
+            "outputPath": {
+              "base": "dist/02-template-driven-forms_solution"
+            },
             "index": "projects/02-template-driven-forms_solution/src/index.html",
-            "main": "projects/02-template-driven-forms_solution/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/02-template-driven-forms_solution/tsconfig.app.json",
             "assets": [
               {
@@ -493,7 +504,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/02-template-driven-forms_solution/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -506,9 +518,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -585,12 +595,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/03-reactive-forms",
+            "outputPath": {
+              "base": "dist/03-reactive-forms"
+            },
             "index": "projects/03-reactive-forms/src/index.html",
-            "main": "projects/03-reactive-forms/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/03-reactive-forms/tsconfig.app.json",
             "assets": [
               {
@@ -607,7 +620,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/03-reactive-forms/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -620,9 +634,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -699,12 +711,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/03-reactive-forms_solution",
+            "outputPath": {
+              "base": "dist/03-reactive-forms_solution"
+            },
             "index": "projects/03-reactive-forms_solution/src/index.html",
-            "main": "projects/03-reactive-forms_solution/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/03-reactive-forms_solution/tsconfig.app.json",
             "assets": [
               {
@@ -721,7 +736,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/03-reactive-forms_solution/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -734,9 +750,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -813,12 +827,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/04-change-detection",
+            "outputPath": {
+              "base": "dist/04-change-detection"
+            },
             "index": "projects/04-change-detection/src/index.html",
-            "main": "projects/04-change-detection/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/04-change-detection/tsconfig.app.json",
             "assets": [
               {
@@ -835,7 +852,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/04-change-detection/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -848,9 +866,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -927,12 +943,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/05-guard",
+            "outputPath": {
+              "base": "dist/05-guard"
+            },
             "index": "projects/05-guard/src/index.html",
-            "main": "projects/05-guard/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/05-guard/tsconfig.app.json",
             "assets": [
               {
@@ -949,7 +968,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/05-guard/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -962,9 +982,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -1041,12 +1059,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/05-guard_solution",
+            "outputPath": {
+              "base": "dist/05-guard_solution"
+            },
             "index": "projects/05-guard_solution/src/index.html",
-            "main": "projects/05-guard_solution/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/05-guard_solution/tsconfig.app.json",
             "assets": [
               {
@@ -1063,7 +1084,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/05-guard_solution/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -1076,9 +1098,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -1155,12 +1175,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/06-interceptor",
+            "outputPath": {
+              "base": "dist/06-interceptor"
+            },
             "index": "projects/06-interceptor/src/index.html",
-            "main": "projects/06-interceptor/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/06-interceptor/tsconfig.app.json",
             "assets": [
               {
@@ -1177,7 +1200,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/06-interceptor/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -1190,9 +1214,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -1269,12 +1291,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/06-interceptor_solution",
+            "outputPath": {
+              "base": "dist/06-interceptor_solution"
+            },
             "index": "projects/06-interceptor_solution/src/index.html",
-            "main": "projects/06-interceptor_solution/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/06-interceptor_solution/tsconfig.app.json",
             "assets": [
               {
@@ -1291,7 +1316,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/06-interceptor_solution/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -1304,9 +1330,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -1383,12 +1407,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/07-directive",
+            "outputPath": {
+              "base": "dist/07-directive"
+            },
             "index": "projects/07-directive/src/index.html",
-            "main": "projects/07-directive/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/07-directive/tsconfig.app.json",
             "assets": [
               {
@@ -1405,7 +1432,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/07-directive/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -1418,9 +1446,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -1497,12 +1523,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/07-directive_solution",
+            "outputPath": {
+              "base": "dist/07-directive_solution"
+            },
             "index": "projects/07-directive_solution/src/index.html",
-            "main": "projects/07-directive_solution/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/07-directive_solution/tsconfig.app.json",
             "assets": [
               {
@@ -1519,7 +1548,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/07-directive_solution/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -1532,9 +1562,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -1611,12 +1639,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/08-pipe",
+            "outputPath": {
+              "base": "dist/08-pipe"
+            },
             "index": "projects/08-pipe/src/index.html",
-            "main": "projects/08-pipe/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/08-pipe/tsconfig.app.json",
             "assets": [
               {
@@ -1633,7 +1664,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/08-pipe/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -1646,9 +1678,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -1725,12 +1755,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/08-pipe_solution",
+            "outputPath": {
+              "base": "dist/08-pipe_solution"
+            },
             "index": "projects/08-pipe_solution/src/index.html",
-            "main": "projects/08-pipe_solution/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/08-pipe_solution/tsconfig.app.json",
             "assets": [
               {
@@ -1747,7 +1780,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/08-pipe_solution/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -1760,9 +1794,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -1839,12 +1871,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/09-smart-dumb",
+            "outputPath": {
+              "base": "dist/09-smart-dumb"
+            },
             "index": "projects/09-smart-dumb/src/index.html",
-            "main": "projects/09-smart-dumb/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/09-smart-dumb/tsconfig.app.json",
             "assets": [
               {
@@ -1861,7 +1896,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/09-smart-dumb/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -1874,9 +1910,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -1953,12 +1987,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/09-smart-dumb_solution",
+            "outputPath": {
+              "base": "dist/09-smart-dumb_solution"
+            },
             "index": "projects/09-smart-dumb_solution/src/index.html",
-            "main": "projects/09-smart-dumb_solution/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/09-smart-dumb_solution/tsconfig.app.json",
             "assets": [
               {
@@ -1975,7 +2012,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/09-smart-dumb_solution/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -1988,9 +2026,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -2067,12 +2103,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/10-stateful-service",
+            "outputPath": {
+              "base": "dist/10-stateful-service"
+            },
             "index": "projects/10-stateful-service/src/index.html",
-            "main": "projects/10-stateful-service/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/10-stateful-service/tsconfig.app.json",
             "assets": [
               {
@@ -2089,7 +2128,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/10-stateful-service/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -2102,9 +2142,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -2181,12 +2219,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/10-stateful-service_solution",
+            "outputPath": {
+              "base": "dist/10-stateful-service_solution"
+            },
             "index": "projects/10-stateful-service_solution/src/index.html",
-            "main": "projects/10-stateful-service_solution/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/10-stateful-service_solution/tsconfig.app.json",
             "assets": [
               {
@@ -2203,7 +2244,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/10-stateful-service_solution/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -2216,9 +2258,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -2295,12 +2335,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/11-signals",
+            "outputPath": {
+              "base": "dist/11-signals"
+            },
             "index": "projects/11-signals/src/index.html",
-            "main": "projects/11-signals/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/11-signals/tsconfig.app.json",
             "assets": [
               {
@@ -2317,7 +2360,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/11-signals/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -2330,9 +2374,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -2409,12 +2451,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/11-signals_solution",
+            "outputPath": {
+              "base": "dist/11-signals_solution"
+            },
             "index": "projects/11-signals_solution/src/index.html",
-            "main": "projects/11-signals_solution/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/11-signals_solution/tsconfig.app.json",
             "assets": [
               {
@@ -2431,7 +2476,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/11-signals_solution/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -2444,9 +2490,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -2523,12 +2567,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/12-backend-request",
+            "outputPath": {
+              "base": "dist/12-backend-request"
+            },
             "index": "projects/12-backend-request/src/index.html",
-            "main": "projects/12-backend-request/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/12-backend-request/tsconfig.app.json",
             "assets": [
               {
@@ -2545,7 +2592,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/12-backend-request/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -2558,9 +2606,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -2637,12 +2683,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/12-backend-request_solution",
+            "outputPath": {
+              "base": "dist/12-backend-request_solution"
+            },
             "index": "projects/12-backend-request_solution/src/index.html",
-            "main": "projects/12-backend-request_solution/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/12-backend-request_solution/tsconfig.app.json",
             "assets": [
               {
@@ -2659,7 +2708,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/12-backend-request_solution/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -2672,9 +2722,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -2751,12 +2799,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/13-routing",
+            "outputPath": {
+              "base": "dist/13-routing"
+            },
             "index": "projects/13-routing/src/index.html",
-            "main": "projects/13-routing/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/13-routing/tsconfig.app.json",
             "assets": [
               {
@@ -2773,7 +2824,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/13-routing/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -2786,9 +2838,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -2865,12 +2915,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/13-routing_solution",
+            "outputPath": {
+              "base": "dist/13-routing_solution"
+            },
             "index": "projects/13-routing_solution/src/index.html",
-            "main": "projects/13-routing_solution/src/main.ts",
-            "polyfills": "zone.js",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/13-routing_solution/tsconfig.app.json",
             "assets": [
               {
@@ -2887,7 +2940,8 @@
             "styles": [
               "projects/shared/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/13-routing_solution/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -2900,9 +2954,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true

@@ -1,11 +1,11 @@
-@defer (on trigger; when condition;
-        prefetch when trigger; prefetch on condition) {
+@defer (on <trigger>; when <condition>;
+        prefetch on <trigger>; prefetch when <condition>) {
   <!--  some template block -->
   <app-heroes/>
 } <!--  additional blocks -->
 
 @defer (on trigger; when condition;
-        prefetch when trigger; prefetch on condition) {
+        prefetch on trigger; prefetch when condition) {
   <!--  some template block -->
   <app-heroes/>
 } @placeholder (minimum 200ms) {

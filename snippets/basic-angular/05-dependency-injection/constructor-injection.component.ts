@@ -3,7 +3,7 @@ import { MyService } from './my.service';
 
 @Component({
   selector: 'app-constructor-injection',
-  standalone: true,
+
   template: ``,
 })
 export class ConstructorInjectionComponent {

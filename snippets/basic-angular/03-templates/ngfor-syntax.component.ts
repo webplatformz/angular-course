@@ -3,7 +3,7 @@ import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-ingredient-list',
-  standalone: true,
+
   template: `
     <ul>
       <li *ngFor="let ingredient of ingredients">{{ ingredient.quantity }} - {{ ingredient.name }}</li>

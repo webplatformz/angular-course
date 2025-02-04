@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-params-sync',
-  standalone: true,
+
   template: ``,
 })
 export class ParamsSyncComponent implements OnInit {

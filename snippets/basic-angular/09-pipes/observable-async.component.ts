@@ -4,7 +4,7 @@ import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-observable-subscribe',
-  standalone: true,
+
   template: `number is: {{ myObservable$ | async }}`,
   imports: [AsyncPipe],
 })

@@ -3,11 +3,10 @@ import { MessageService } from '../../message.service';
 import { MessageBarComponent } from '../ui/message-bar/message-bar.component';
 
 @Component({
-  selector: 'app-messages',
-  templateUrl: './messages.component.html',
-  styleUrls: [],
-  standalone: true,
-  imports: [MessageBarComponent],
+    selector: 'app-messages',
+    templateUrl: './messages.component.html',
+    styleUrls: [],
+    imports: [MessageBarComponent]
 })
 export class MessagesComponent {
   constructor(public messageService: MessageService) {}

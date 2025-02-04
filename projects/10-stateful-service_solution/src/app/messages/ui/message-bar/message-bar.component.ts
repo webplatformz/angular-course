@@ -1,11 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-message-bar',
-  standalone: true,
-  imports: [],
-  templateUrl: './message-bar.component.html',
-  styleUrl: './message-bar.component.css',
+    selector: 'app-message-bar',
+    imports: [],
+    templateUrl: './message-bar.component.html',
+    styleUrl: './message-bar.component.css'
 })
 export class MessageBarComponent {
   @Input()

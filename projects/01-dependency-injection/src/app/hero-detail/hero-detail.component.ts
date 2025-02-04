@@ -7,11 +7,10 @@ import { HeroService } from '../hero.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.css'],
-  standalone: true,
-  imports: [FormsModule, UpperCasePipe],
+    selector: 'app-hero-detail',
+    templateUrl: './hero-detail.component.html',
+    styleUrls: ['./hero-detail.component.css'],
+    imports: [FormsModule, UpperCasePipe]
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;

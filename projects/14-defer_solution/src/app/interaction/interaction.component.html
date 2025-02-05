@@ -1,0 +1,9 @@
+<h2>defer on interaction</h2>
+<app-stopwatch></app-stopwatch>
+<button #button>Load second stopwatch component</button>
+@defer (on interaction(button)) {
+  <p>🎉 I was loaded by clicking a button!</p>
+  <app-stopwatch></app-stopwatch>
+} @placeholder (minimum 1s) {
+  <p>A stopwatch could appear here. But I'm just a placeholder.</p>
+}

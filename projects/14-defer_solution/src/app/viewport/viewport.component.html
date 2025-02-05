@@ -1,0 +1,10 @@
+<!-- Standardverhalten: Element wird erst geladen, wenn es im Viewport ist -->
+<h2>defer on viewport</h2>
+<app-stopwatch></app-stopwatch>
+<div class="spacer">Scroll down ⬇️</div>
+@defer (on viewport) {
+  <p>Since I am visible now, I've been loaded!</p>
+  <app-stopwatch></app-stopwatch>
+} @placeholder {
+  <p>Please look at me!</p>
+}

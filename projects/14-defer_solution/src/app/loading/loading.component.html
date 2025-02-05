@@ -1,0 +1,13 @@
+<h2>defer with loading</h2>
+<app-stopwatch></app-stopwatch>
+<button (click)="onLoadContent()">Load second stopwatch component</button>
+@defer (when startLoading) {
+  <p>✅ I've been loaded!</p>
+  <app-stopwatch></app-stopwatch>
+} @loading (minimum 5s) {
+  <p>🔄 Is loading for at least 5 secs...</p>
+} @placeholder {
+  <p>This could be your placeholder...</p>
+} @error {
+  <p>⚠️ Error while loading!</p>
+}

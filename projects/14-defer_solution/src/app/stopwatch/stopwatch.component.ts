@@ -1,4 +1,5 @@
-import { Component, DestroyRef, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit, signal } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-stopwatch',
@@ -8,20 +9,15 @@ import { Component, DestroyRef, OnInit } from '@angular/core';
   styleUrl: './stopwatch.component.css',
 })
 export class StopwatchComponent implements OnInit {
-  elapsedTime = 0;
-  private intervalId: any;
+  elapsedTime = signal(0);
 
-  constructor(private destroyRef: DestroyRef) {
-    this.startStopwatch();
-  }
-
-  startStopwatch() {
-    this.intervalId = setInterval(() => {
-      this.elapsedTime++;
-    }, 1000);
-  }
+  constructor(private destroyRef: DestroyRef) {}
 
   ngOnInit(): void {
-    this.destroyRef.onDestroy(() => clearInterval(this.intervalId));
+    const sub = interval(1000).subscribe(val => {
+      console.log(val);
+      this.elapsedTime.set(val);
+    });
+    this.destroyRef.onDestroy(() => sub.unsubscribe());
   }
 }

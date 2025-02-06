@@ -3,8 +3,8 @@
 <app-stopwatch></app-stopwatch>
 <div class="spacer">Scroll down ⬇️</div>
 @defer (on viewport) {
-  <p>Since I am visible now, I've been loaded!</p>
+  <p class="defer-message">Since I am visible now, I've been loaded!</p>
   <app-stopwatch></app-stopwatch>
 } @placeholder {
-  <p>Please look at me!</p>
+  <p class="placeholder">Please look at me!</p>
 }

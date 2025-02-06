@@ -1,0 +1,51 @@
+/* AppComponent's private CSS styles */
+:root {
+  --dark-green: #0e4f1f;
+  --highlight-color: #ff1b68;
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header {
+  width: 100%;
+  background: rgb(60, 60, 60);
+  padding: 0.5rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-nav {
+  display: flex;
+}
+
+.main-nav__items {
+  margin: 0;
+  padding: 0.7rem;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav__item a {
+  margin: 0;
+  padding: 0;
+  font-size: 1.3rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background-color: transparent;
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
+  color: rgb(200, 200, 200);
+}
+
+.main-content {
+  padding: 1rem;
+}

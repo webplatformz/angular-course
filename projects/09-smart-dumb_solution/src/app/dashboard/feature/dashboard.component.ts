@@ -10,11 +10,10 @@ import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'],
-  standalone: true,
-  imports: [RouterLink, HeroSearchComponent, SpacedPipe, UpperCasePipe, HeroesMenuComponent, AsyncPipe],
+    selector: 'app-dashboard',
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['./dashboard.component.css'],
+    imports: [RouterLink, HeroSearchComponent, SpacedPipe, UpperCasePipe, HeroesMenuComponent, AsyncPipe]
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];

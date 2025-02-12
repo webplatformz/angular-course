@@ -3,11 +3,10 @@ import { RouterLink } from '@angular/router';
 import { Classification, Hero } from '../../../hero';
 
 @Component({
-  selector: 'app-heroes-list',
-  standalone: true,
-  imports: [RouterLink],
-  templateUrl: './heroes-list.component.html',
-  styleUrl: './heroes-list.component.css',
+    selector: 'app-heroes-list',
+    imports: [RouterLink],
+    templateUrl: './heroes-list.component.html',
+    styleUrl: './heroes-list.component.css'
 })
 export class HeroesListComponent {
   CLASSIFIED = Classification.CLASSIFIED;

@@ -3,7 +3,7 @@ import { MyService } from './my.service';
 
 @Component({
   selector: 'app-manual',
-  standalone: true,
+
   template: ``,
 })
 export class ManualInjectionComponent {

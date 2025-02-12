@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 
 @Component({
-  standalone: true,
   selector: 'app-hero-list',
   imports: [HeroComponent],
   template: ` <section>
-    Our list of heroes: @for(hero of heroes; track hero.name) {
-    <app-hero [hero]="hero"></app-hero>
-    } Total powers: {{ totalPowers }}<br />
+    Our list of heroes:
+    @for (hero of heroes; track hero.name) {
+      <app-hero [hero]="hero"></app-hero>
+    }
+    Total powers: {{ totalPowers }}<br />
     Average power: {{ avgPower }}
   </section>`,
 })

@@ -417,10 +417,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "02-template-driven-forms:build:production"
+              "buildTarget": "02-template-driven-forms:build:production"
             },
             "development": {
-              "browserTarget": "02-template-driven-forms:build:development"
+              "buildTarget": "02-template-driven-forms:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -428,7 +428,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "02-template-driven-forms:build"
+            "buildTarget": "02-template-driven-forms:build"
           }
         },
         "test": {
@@ -533,10 +533,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "02-template-driven-forms_solution:build:production"
+              "buildTarget": "02-template-driven-forms_solution:build:production"
             },
             "development": {
-              "browserTarget": "02-template-driven-forms_solution:build:development"
+              "buildTarget": "02-template-driven-forms_solution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -544,7 +544,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "02-template-driven-forms_solution:build"
+            "buildTarget": "02-template-driven-forms_solution:build"
           }
         },
         "test": {
@@ -649,10 +649,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "03-reactive-forms:build:production"
+              "buildTarget": "03-reactive-forms:build:production"
             },
             "development": {
-              "browserTarget": "03-reactive-forms:build:development"
+              "buildTarget": "03-reactive-forms:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -660,7 +660,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "03-reactive-forms:build"
+            "buildTarget": "03-reactive-forms:build"
           }
         },
         "test": {
@@ -765,10 +765,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "03-reactive-forms_solution:build:production"
+              "buildTarget": "03-reactive-forms_solution:build:production"
             },
             "development": {
-              "browserTarget": "03-reactive-forms_solution:build:development"
+              "buildTarget": "03-reactive-forms_solution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -776,7 +776,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "03-reactive-forms_solution:build"
+            "buildTarget": "03-reactive-forms_solution:build"
           }
         },
         "test": {
@@ -881,10 +881,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "04-change-detection:build:production"
+              "buildTarget": "04-change-detection:build:production"
             },
             "development": {
-              "browserTarget": "04-change-detection:build:development"
+              "buildTarget": "04-change-detection:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -892,7 +892,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "04-change-detection:build"
+            "buildTarget": "04-change-detection:build"
           }
         },
         "test": {
@@ -997,10 +997,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "05-guard:build:production"
+              "buildTarget": "05-guard:build:production"
             },
             "development": {
-              "browserTarget": "05-guard:build:development"
+              "buildTarget": "05-guard:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -1008,7 +1008,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "05-guard:build"
+            "buildTarget": "05-guard:build"
           }
         },
         "test": {
@@ -1113,10 +1113,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "05-guard_solution:build:production"
+              "buildTarget": "05-guard_solution:build:production"
             },
             "development": {
-              "browserTarget": "05-guard_solution:build:development"
+              "buildTarget": "05-guard_solution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -1124,7 +1124,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "05-guard_solution:build"
+            "buildTarget": "05-guard_solution:build"
           }
         },
         "test": {
@@ -1229,10 +1229,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "06-interceptor:build:production"
+              "buildTarget": "06-interceptor:build:production"
             },
             "development": {
-              "browserTarget": "06-interceptor:build:development"
+              "buildTarget": "06-interceptor:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -1240,7 +1240,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "06-interceptor:build"
+            "buildTarget": "06-interceptor:build"
           }
         },
         "test": {
@@ -1345,10 +1345,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "06-interceptor_solution:build:production"
+              "buildTarget": "06-interceptor_solution:build:production"
             },
             "development": {
-              "browserTarget": "06-interceptor_solution:build:development"
+              "buildTarget": "06-interceptor_solution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -1356,7 +1356,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "06-interceptor_solution:build"
+            "buildTarget": "06-interceptor_solution:build"
           }
         },
         "test": {
@@ -1461,10 +1461,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "07-directive:build:production"
+              "buildTarget": "07-directive:build:production"
             },
             "development": {
-              "browserTarget": "07-directive:build:development"
+              "buildTarget": "07-directive:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -1472,7 +1472,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "07-directive:build"
+            "buildTarget": "07-directive:build"
           }
         },
         "test": {
@@ -1577,10 +1577,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "07-directive_solution:build:production"
+              "buildTarget": "07-directive_solution:build:production"
             },
             "development": {
-              "browserTarget": "07-directive_solution:build:development"
+              "buildTarget": "07-directive_solution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -1588,7 +1588,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "07-directive_solution:build"
+            "buildTarget": "07-directive_solution:build"
           }
         },
         "test": {
@@ -1693,10 +1693,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "08-pipe:build:production"
+              "buildTarget": "08-pipe:build:production"
             },
             "development": {
-              "browserTarget": "08-pipe:build:development"
+              "buildTarget": "08-pipe:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -1704,7 +1704,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "08-pipe:build"
+            "buildTarget": "08-pipe:build"
           }
         },
         "test": {
@@ -1809,10 +1809,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "08-pipe_solution:build:production"
+              "buildTarget": "08-pipe_solution:build:production"
             },
             "development": {
-              "browserTarget": "08-pipe_solution:build:development"
+              "buildTarget": "08-pipe_solution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -1820,7 +1820,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "08-pipe_solution:build"
+            "buildTarget": "08-pipe_solution:build"
           }
         },
         "test": {
@@ -1925,10 +1925,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "09-smart-dumb:build:production"
+              "buildTarget": "09-smart-dumb:build:production"
             },
             "development": {
-              "browserTarget": "09-smart-dumb:build:development"
+              "buildTarget": "09-smart-dumb:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -1936,7 +1936,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "09-smart-dumb:build"
+            "buildTarget": "09-smart-dumb:build"
           }
         },
         "test": {
@@ -2041,10 +2041,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "09-smart-dumb_solution:build:production"
+              "buildTarget": "09-smart-dumb_solution:build:production"
             },
             "development": {
-              "browserTarget": "09-smart-dumb_solution:build:development"
+              "buildTarget": "09-smart-dumb_solution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -2052,7 +2052,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "09-smart-dumb_solution:build"
+            "buildTarget": "09-smart-dumb_solution:build"
           }
         },
         "test": {
@@ -2157,10 +2157,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "10-stateful-service:build:production"
+              "buildTarget": "10-stateful-service:build:production"
             },
             "development": {
-              "browserTarget": "10-stateful-service:build:development"
+              "buildTarget": "10-stateful-service:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -2168,7 +2168,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "10-stateful-service:build"
+            "buildTarget": "10-stateful-service:build"
           }
         },
         "test": {
@@ -2273,10 +2273,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "10-stateful-service_solution:build:production"
+              "buildTarget": "10-stateful-service_solution:build:production"
             },
             "development": {
-              "browserTarget": "10-stateful-service_solution:build:development"
+              "buildTarget": "10-stateful-service_solution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -2284,7 +2284,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "10-stateful-service_solution:build"
+            "buildTarget": "10-stateful-service_solution:build"
           }
         },
         "test": {
@@ -2389,10 +2389,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "11-signals:build:production"
+              "buildTarget": "11-signals:build:production"
             },
             "development": {
-              "browserTarget": "11-signals:build:development"
+              "buildTarget": "11-signals:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -2400,7 +2400,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "11-signals:build"
+            "buildTarget": "11-signals:build"
           }
         },
         "test": {
@@ -2505,10 +2505,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "11-signals_solution:build:production"
+              "buildTarget": "11-signals_solution:build:production"
             },
             "development": {
-              "browserTarget": "11-signals_solution:build:development"
+              "buildTarget": "11-signals_solution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -2516,7 +2516,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "11-signals_solution:build"
+            "buildTarget": "11-signals_solution:build"
           }
         },
         "test": {
@@ -2621,10 +2621,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "12-backend-request:build:production"
+              "buildTarget": "12-backend-request:build:production"
             },
             "development": {
-              "browserTarget": "12-backend-request:build:development"
+              "buildTarget": "12-backend-request:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -2632,7 +2632,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "12-backend-request:build"
+            "buildTarget": "12-backend-request:build"
           }
         },
         "test": {
@@ -2737,10 +2737,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "12-backend-request_solution:build:production"
+              "buildTarget": "12-backend-request_solution:build:production"
             },
             "development": {
-              "browserTarget": "12-backend-request_solution:build:development"
+              "buildTarget": "12-backend-request_solution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -2748,7 +2748,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "12-backend-request_solution:build"
+            "buildTarget": "12-backend-request_solution:build"
           }
         },
         "test": {
@@ -2853,10 +2853,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "13-routing:build:production"
+              "buildTarget": "13-routing:build:production"
             },
             "development": {
-              "browserTarget": "13-routing:build:development"
+              "buildTarget": "13-routing:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -2864,7 +2864,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "13-routing:build"
+            "buildTarget": "13-routing:build"
           }
         },
         "test": {
@@ -2969,10 +2969,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "13-routing_solution:build:production"
+              "buildTarget": "13-routing_solution:build:production"
             },
             "development": {
-              "browserTarget": "13-routing_solution:build:development"
+              "buildTarget": "13-routing_solution:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -2980,7 +2980,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "13-routing_solution:build"
+            "buildTarget": "13-routing_solution:build"
           }
         },
         "test": {

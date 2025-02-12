@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-params-async',
-  standalone: true,
+
   template: ``,
 })
 export class ParamsAsyncComponent implements OnInit {

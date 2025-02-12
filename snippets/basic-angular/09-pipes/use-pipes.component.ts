@@ -3,7 +3,7 @@ import { DatePipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-use-pipes',
-  standalone: true,
+
   template: `
     {{ myValue | uppercase }}
 

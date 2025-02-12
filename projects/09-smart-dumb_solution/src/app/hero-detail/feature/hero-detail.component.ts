@@ -9,11 +9,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EditHeroComponent } from '../ui/edit-hero/edit-hero.component';
 
 @Component({
-  selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: [],
-  standalone: true,
-  imports: [ReactiveFormsModule, UpperCasePipe, EditHeroComponent],
+    selector: 'app-hero-detail',
+    templateUrl: './hero-detail.component.html',
+    styleUrls: [],
+    imports: [ReactiveFormsModule, UpperCasePipe, EditHeroComponent]
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;

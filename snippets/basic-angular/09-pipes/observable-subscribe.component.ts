@@ -3,7 +3,7 @@ import { of } from 'rxjs';
 
 @Component({
   selector: 'app-observable-subscribe',
-  standalone: true,
+
   template: `number is: {{ myNum }}`,
 })
 export class ObservableSubscribeComponent implements OnInit {

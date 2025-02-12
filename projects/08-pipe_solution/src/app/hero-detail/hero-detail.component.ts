@@ -8,11 +8,10 @@ import { LoggingService } from '../logging.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.css'],
-  standalone: true,
-  imports: [ReactiveFormsModule, UpperCasePipe],
+    selector: 'app-hero-detail',
+    templateUrl: './hero-detail.component.html',
+    styleUrls: ['./hero-detail.component.css'],
+    imports: [ReactiveFormsModule, UpperCasePipe]
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;

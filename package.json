@@ -109,7 +109,15 @@
     "13-routing_solution:start": "ng serve 13-routing_solution --open",
     "13-routing_solution:test": "ng test 13-routing_solution",
     "13-routing_solution:e2e": "npm run e2e -- -P ./projects/13-routing_solution",
-    "13-routing_solution:e2e:open": "npm run e2e:open -- -P ./projects/13-routing_solution"
+    "13-routing_solution:e2e:open": "npm run e2e:open -- -P ./projects/13-routing_solution",
+    "15-formbuilder:start": "ng serve 15-formbuilder --open",
+    "15-formbuilder:test": "ng test 15-formbuilder",
+    "15-formbuilder:e2e": "npm run e2e -- -P ./projects/15-formbuilder",
+    "15-formbuilder:e2e:open": "npm run e2e:open -- -P ./projects/15-formbuilder",
+    "15-formbuilder_solution:start": "ng serve 15-formbuilder_solution --open",
+    "15-formbuilder_solution:test": "ng test 15-formbuilder_solution",
+    "15-formbuilder_solution:e2e": "npm run e2e -- -P ./projects/15-formbuilder_solution",
+    "15-formbuilder_solution:e2e:open": "npm run e2e:open -- -P ./projects/15-formbuilder_solution"
   },
   "private": true,
   "dependencies": {

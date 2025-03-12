@@ -1,0 +1,73 @@
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location, UpperCasePipe } from '@angular/common';
+
+import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
+import { LoggingService } from '../logging.service';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AddressFormComponent } from './address-form/address-form.component';
+
+@Component({
+  selector: 'app-hero-detail',
+  templateUrl: './hero-detail.component.html',
+  styleUrls: ['./hero-detail.component.css'],
+  imports: [ReactiveFormsModule, UpperCasePipe, AddressFormComponent],
+})
+export class HeroDetailComponent implements OnInit {
+  hero: Hero | undefined;
+
+  protected addressControlName = 'address';
+
+  private fb: FormBuilder = inject(FormBuilder);
+
+  heroForm: FormGroup<{ name: FormControl<string | null>; description: FormControl<string | null> }> = this.fb.group({
+    name: ['', Validators.required],
+    description: [''],
+  });
+
+  constructor(
+    private logging: LoggingService,
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private location: Location,
+  ) {}
+
+  ngOnInit(): void {
+    this.getHero();
+  }
+
+  getHero(): void {
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
+    this.heroService.getHero(id).subscribe(hero => {
+      this.hero = hero;
+      this.updateForm(hero);
+    });
+    this.logging.log(`Selected heroes id is ${id}`);
+  }
+
+  private updateForm(hero: Hero) {
+    this.heroForm.patchValue({
+      name: hero.name,
+      description: hero.description,
+    });
+  }
+
+  goBack(): void {
+    this.heroForm?.reset();
+    this.location.back();
+  }
+
+  save(): void {
+    if (this.hero) {
+      const heroToSave = {
+        ...this.hero,
+        name: this.heroForm.controls.name.value!,
+        description: this.heroForm.controls.description.value!,
+        address: this.heroForm.get(this.addressControlName)?.value!,
+      };
+
+      this.heroService.updateHero(heroToSave).subscribe(() => this.goBack());
+    }
+  }
+}

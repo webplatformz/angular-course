@@ -4,17 +4,16 @@ import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-public-heroes',
-  standalone: true,
+
   imports: [],
   templateUrl: './public-heroes.component.html',
-  styleUrl: './public-heroes.component.css'
+  styleUrl: './public-heroes.component.css',
 })
 export class PublicHeroesComponent implements OnInit {
   publicHeroes: Hero[] = [];
 
   // todo: inject HeroService
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.getPublicHeroes();

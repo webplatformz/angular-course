@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-ingredient-list',
-  standalone: true,
+
   template: `
     <ul>
       @for (ingredient of ingredients; track ingredient.name) {
-      <li>{{ ingredient.quantity }} - {{ ingredient.name }}</li>
+        <li>{{ ingredient.quantity }} - {{ ingredient.name }}</li>
       }
     </ul>
   `,

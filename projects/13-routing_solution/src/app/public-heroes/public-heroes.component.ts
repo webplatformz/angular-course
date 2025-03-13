@@ -3,11 +3,10 @@ import { Classification, Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
 @Component({
-  selector: 'app-public-heroes',
-  standalone: true,
-  imports: [],
-  templateUrl: './public-heroes.component.html',
-  styleUrl: './public-heroes.component.css'
+    selector: 'app-public-heroes',
+    imports: [],
+    templateUrl: './public-heroes.component.html',
+    styleUrl: './public-heroes.component.css'
 })
 export class PublicHeroesComponent implements OnInit {
   publicHeroes: Hero[] = [];

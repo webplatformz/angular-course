@@ -1,0 +1,20 @@
+@if (heroForm) {
+  <div>
+    <h2>{{ heroForm.value.name | uppercase }} Details</h2>
+    <form (ngSubmit)="save()" [formGroup]="heroForm">
+      <div><span>id: </span>{{ hero?.id }}</div>
+
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" formControlName="name" placeholder="Hero name" name="name" />
+
+      <label for="hero-description">Description: </label>
+      <input id="hero-description" formControlName="description" placeholder="Hero description" name="description" />
+
+      <app-address-form [parentForm]="heroForm" [controlName]="addressControlName"
+                        [address]="hero?.address"></app-address-form>
+
+      <button type="button" (click)="goBack()">go back</button>
+      <button id="save-hero-button" type="submit" [disabled]="heroForm.invalid">save</button>
+    </form>
+  </div>
+}

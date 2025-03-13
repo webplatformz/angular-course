@@ -1,19 +1,18 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Injectable, Signal, signal, WritableSignal } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class MessageService {
-  private messages$ = new BehaviorSubject<string[]>([]);
+  private messages$: WritableSignal<string[]> = signal([]);
 
   add(message: string) {
-    this.messages$.next(this.messages$.getValue().concat(message));
+    this.messages$.update(value => [...value, message]);
   }
 
   clear() {
-    this.messages$.next([]);
+    this.messages$.set([]);
   }
 
-  get messages(): Observable<string[]> {
-    return this.messages$.asObservable();
+  get messages(): Signal<string[]> {
+    return this.messages$.asReadonly();
   }
 }

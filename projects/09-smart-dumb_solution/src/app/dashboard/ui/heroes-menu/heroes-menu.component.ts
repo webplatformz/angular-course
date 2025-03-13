@@ -5,11 +5,10 @@ import { RouterLink } from '@angular/router';
 import { Hero } from '../../../hero';
 
 @Component({
-  selector: 'app-heroes-menu',
-  standalone: true,
-  imports: [SpacedPipe, UpperCasePipe, RouterLink],
-  templateUrl: './heroes-menu.component.html',
-  styleUrl: './heroes-menu.component.css',
+    selector: 'app-heroes-menu',
+    imports: [SpacedPipe, UpperCasePipe, RouterLink],
+    templateUrl: './heroes-menu.component.html',
+    styleUrl: './heroes-menu.component.css'
 })
 export class HeroesMenuComponent {
   @Input()

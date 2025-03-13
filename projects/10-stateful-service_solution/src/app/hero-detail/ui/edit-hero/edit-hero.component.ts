@@ -4,11 +4,10 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { UpperCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-edit-hero',
-  standalone: true,
-  imports: [ReactiveFormsModule, UpperCasePipe],
-  templateUrl: './edit-hero.component.html',
-  styleUrl: './edit-hero.component.css',
+    selector: 'app-edit-hero',
+    imports: [ReactiveFormsModule, UpperCasePipe],
+    templateUrl: './edit-hero.component.html',
+    styleUrl: './edit-hero.component.css'
 })
 export class EditHeroComponent implements OnChanges {
   @Input()

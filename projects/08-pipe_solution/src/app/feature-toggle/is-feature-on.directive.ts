@@ -3,7 +3,6 @@ import { FeatureService } from './feature.service';
 
 @Directive({
   selector: '[ifEnabled]',
-  standalone: true,
 })
 export class IsFeatureOnDirective {
   private hasView = false;

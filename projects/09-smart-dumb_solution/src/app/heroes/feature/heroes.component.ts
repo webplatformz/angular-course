@@ -7,11 +7,10 @@ import { AddHeroComponent } from '../ui/add-hero/add-hero.component';
 import { HeroesListComponent } from '../ui/heroes-list/heroes-list.component';
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: [],
-  standalone: true,
-  imports: [RouterLink, AddHeroComponent, HeroesListComponent],
+    selector: 'app-heroes',
+    templateUrl: './heroes.component.html',
+    styleUrls: [],
+    imports: [RouterLink, AddHeroComponent, HeroesListComponent]
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];

@@ -4,7 +4,6 @@ type Person = { name: string };
 type Address = { city: string; street: string };
 
 @Component({
-  standalone: true,
   selector: 'app-person',
   template: ` {{ person.name }} lives in {{ address.city }} {{ zipCode }} `,
 })

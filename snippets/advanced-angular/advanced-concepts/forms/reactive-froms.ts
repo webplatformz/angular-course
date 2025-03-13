@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
-  standalone: true,
   template: `
     <form [formGroup]="profileForm">
       <label for="name">User Name: </label>

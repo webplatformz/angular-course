@@ -5,11 +5,11 @@ export class MessageService {
   private _messages$: WritableSignal<string[]> = signal([]);
 
   add(message: string) {
-    // todo: add message to _messages, hint: use 'update' method
+    this._messages$.update(value => [...value, message]);
   }
 
   clear() {
-    // todo: implement, hint: use 'set' method
+    this._messages$.set([]);
   }
 
   get messages$(): Signal<string[]> {

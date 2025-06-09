@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MessageService } from '../../message.service';
 import { MessageBarComponent } from '../ui/message-bar/message-bar.component';
 
@@ -12,7 +12,7 @@ import { MessageBarComponent } from '../ui/message-bar/message-bar.component';
 export class MessagesComponent {
   constructor(public messageService: MessageService) {}
 
-  messages$ = computed(() => this.messageService.messages$());
+  // TODO: pass the messages from message service to the message bar
 
   public clear() {
     this.messageService.clear();

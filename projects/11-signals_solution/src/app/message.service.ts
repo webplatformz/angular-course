@@ -5,7 +5,7 @@ export class MessageService {
   private _messages$: WritableSignal<string[]> = signal([]);
 
   add(message: string) {
-    this._messages$.update(existing => [...existing, message]);
+    this._messages$.update(value => [...value, message]);
   }
 
   clear() {

@@ -1,0 +1,49 @@
+<h1>Angular &#64;defer</h1>
+<p>
+  Deferrable views (&#64;defer blocks) help reduce the initial bundle size by lazy load any Angular standalone
+  component.
+</p>
+
+<div class="example">
+  <code>
+    <b>&#64;defer</b> ( on &lt;behavior trigger&gt;; when &lt;condition trigger&gt;; prefetch on &lt;behavior trigger&gt;;
+    prefetch when &lt;condition trigger&gt; ) &#123;<br>
+    &nbsp;&nbsp;&lt;app-large-component/&gt; <br>
+    &#125; <b>&#64;placeholder</b> ( minimum? &lt;duration&gt; ) &#123;<br>
+    &nbsp;&nbsp;&lt;p&gt;Waits, until loading is triggered&lt;/p&gt;<br>
+    &#125; <b>&#64;loading</b> ( minimum? &lt;duration&gt;; after? &lt;duration&gt; ) &#123;<br>
+    &nbsp;&nbsp;&lt;app-loading-spinner/&gt; <br>
+    &#125; <b>&#64;error</b> &#123;<br>
+    &nbsp;&nbsp;&lt;p&gt;Error! The large component could not be loaded.&lt;/p&gt;<br>
+    &#125;
+  </code>
+</div>
+
+<h2>Features</h2>
+<ul>
+  <li>Supports <b>triggers</b> (e.g., visibility, user interaction, timers).</li>
+  <li>Allows <b>prefetching</b> for better performance.</li>
+  <li>Provides sub-blocks for <b>placeholder, loading, and error handling</b>.</li>
+</ul>
+
+<h2>Triggers</h2>
+<p>There are two types of &#64;defer <b>triggers</b>:<p>
+<ul>
+  <li><span class="code-snippet">on (declarative)</span> — uses one of the available behaviors.</li>
+  <li><span class="code-snippet">when (imperative)</span> — uses any custom logic that returns <span
+    class="code-snippet">true</span> or <span
+    class="code-snippet">false</span>.
+  </li>
+</ul>
+<p>The &#64;defer without any trigger will use the <span class="code-snippet">on idle</span> by default.</p>
+
+<h2>Advantages of &#64;defer</h2>
+<ul>
+  <li>⚡ Faster initial loading time</li>
+  <li>📉 Less rendering load</li>
+  <li>🎯 Improved user experience</li>
+</ul>
+
+<a class="link" href="https://angular.dev/guide/templates/defer" target="_blank">
+  🔗 Official documentation of &#64;defer in Angular
+</a>

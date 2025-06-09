@@ -1,0 +1,20 @@
+h1, h2 {
+  color: #2d89ef;
+}
+
+.example {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-left: 4px solid #2d89ef;
+}
+
+.link {
+  display: block;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.code-snippet {
+  font-style: italic;
+}

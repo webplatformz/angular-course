@@ -2,17 +2,17 @@ import { Injectable, Signal, signal, WritableSignal } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class MessageService {
-  private messages$: WritableSignal<string[]> = signal([]);
+  private _messages$: WritableSignal<string[]> = signal([]);
 
   add(message: string) {
-    this.messages$.update(value => [...value, message]);
+    this._messages$.update(value => [...value, message]);
   }
 
   clear() {
-    this.messages$.set([]);
+    this._messages$.set([]);
   }
 
-  get messages(): Signal<string[]> {
-    return this.messages$.asReadonly();
+  get messages$(): Signal<string[]> {
+    return this._messages$.asReadonly();
   }
 }

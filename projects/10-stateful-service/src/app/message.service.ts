@@ -4,17 +4,17 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class MessageService {
   // todo: refactor to use signal
-  private messages$ = new BehaviorSubject<string[]>([]);
+  private _messages$ = new BehaviorSubject<string[]>([]);
 
   add(message: string) {
-    this.messages$.next([...this.messages$.value, message]);
+    this._messages$.next([...this._messages$.value, message]);
   }
 
   clear() {
-    this.messages$.next([]);
+    this._messages$.next([]);
   }
 
-  get messages(): Observable<string[]> {
-    return this.messages$.asObservable();
+  get messages$(): Observable<string[]> {
+    return this._messages$.asObservable();
   }
 }

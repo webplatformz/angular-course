@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import { MyService } from './my.service';
 
-@Component({
-  selector: 'app-constructor-injection',
-
-  template: ``,
-})
-export class ConstructorInjectionComponent {
+@Component({ ... })
+export class AppComponent {
   constructor(private myService: MyService) {}
 }

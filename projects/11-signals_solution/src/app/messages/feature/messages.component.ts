@@ -12,7 +12,7 @@ import { MessageBarComponent } from '../ui/message-bar/message-bar.component';
 export class MessagesComponent {
   constructor(public messageService: MessageService) {}
 
-  messages$ = this.messageService.messages$;
+  messages = this.messageService.messages;
 
   public clear() {
     this.messageService.clear();

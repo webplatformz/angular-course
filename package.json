@@ -18,6 +18,7 @@
     "00-base:test": "ng test 00-base",
     "00-base:e2e": "npm run e2e -- -P ./projects/00-base",
     "00-base:e2e:open": "npm run e2e:open -- -P ./projects/00-base",
+    "00-base:component-testing": "npx cypress open --component -P ./projects/00-base",
     "01-dependency-injection:start": "ng serve 01-dependency-injection --open",
     "01-dependency-injection:test": "ng test 01-dependency-injection",
     "01-dependency-injection:e2e": "npm run e2e -- -P ./projects/01-dependency-injection",
